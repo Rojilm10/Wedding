@@ -10,7 +10,7 @@
 
 <style>
 :root {
-  --bg-overlay: rgba(247, 244, 239, 0.85);
+  --overlay: rgba(247, 244, 239, 0.85);
   --text: #2f2f2f;
   --accent: #b7a77a;
 }
@@ -22,7 +22,7 @@
 }
 
 body {
-  background: url('bg.jpeg') center center / cover no-repeat fixed;
+  background: url('bg.jpg') center center / cover no-repeat fixed;
   color: var(--text);
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -35,22 +35,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--bg-overlay);
+  background: var(--overlay);
   animation: fadeUp 1.4s ease forwards;
 }
 
-/* Text styles */
-.names {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
+/* Typography */
 .subtitle {
   font-size: 1rem;
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+.names {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin: 15px 0;
 }
 
 .divider {
@@ -68,154 +68,19 @@ body {
 
 /* Countdown */
 #countdown {
-  margin-top: 25px;
-  font-size: 1.1rem;
+  margin-top: 20px;
+  font-size: 1.05rem;
   letter-spacing: 2px;
 }
 #countdown span {
   display: inline-block;
-  margin: 8px 10px;
+  margin: 6px 10px;
 }
 
-/* Map */
-.map {
+/* Venue Image */
+.venue-image {
   margin-top: 40px;
-  border-radius: 14px;
-  overflow: hidden;
 }
-iframe {
+.venue-image img {
   width: 100%;
-  height: 300px;
-  border: 0;
-}
-
-/* RSVP */
-form {
-  margin-top: 40px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-input, button {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 30px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-button {
-  background: var(--text);
-  color: white;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 2px;
-}
-button:hover {
-  background: black;
-}
-
-footer {
-  padding: 40px;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-}
-
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="section">
-  <div class="subtitle">Save the Date</div>
-  <div class="divider"></div>
-  <div class="names">Roji & Linda</div>
-
-  <div id="countdown"></div>
-
-  <div class="details">
-    Together with our families<br>
-    we invite you to celebrate our wedding
-  </div>
-</section>
-
-<!-- DETAILS -->
-<section class="section">
-  <div class="names" style="font-size:2.2rem;">The Wedding</div>
-  <div class="divider"></div>
-
-  <div class="details">
-    Wednesday, 15 April 2026<br>
-    11:30 AM
-    <br><br>
-    SC Church<br>
-    Thiruvalla, Kerala, India
-  </div>
-
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps?q=SC+Church+Thiruvalla+Kerala+India&output=embed"
-      loading="lazy">
-    </iframe>
-  </div>
-</section>
-
-<!-- RSVP -->
-<section class="section">
-  <div class="names" style="font-size:2.2rem;">RSVP</div>
-  <div class="divider"></div>
-
-  <form name="rsvp" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="rsvp">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Email">
-    <input type="number" name="guests" placeholder="Number of Guests">
-    <button type="submit">CONFIRM ATTENDANCE</button>
-  </form>
-</section>
-
-<footer>
-  ROJI & LINDA
-</footer>
-
-<!-- COUNTDOWN SCRIPT -->
-<script>
-const weddingDate = new Date("April 15, 2026 11:30:00 GMT+0530").getTime();
-
-const timer = setInterval(() => {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
-
-  if (distance < 0) {
-    document.getElementById("countdown").innerHTML = "💍 It's Wedding Time!";
-    clearInterval(timer);
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("countdown").innerHTML =
-    `<span>${days} Days</span>
-     <span>${hours} Hours</span>
-     <span>${minutes} Minutes</span>
-     <span>${seconds} Seconds</span>`;
-}, 1000);
-</script>
-
-</body>
-</html>
+  ma
