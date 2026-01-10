@@ -88,32 +88,23 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* RSVP */
-form {
+/* Bible Quote */
+.quote {
   margin-top: 40px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.6;
 }
-input, button {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 30px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-button {
-  background: var(--text);
-  color: white;
-  border: none;
-  cursor: pointer;
+.quote span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-style: normal;
   letter-spacing: 2px;
 }
-button:hover {
-  background: black;
-}
 
+/* Footer */
 footer {
   padding: 40px;
   font-size: 0.8rem;
@@ -168,17 +159,13 @@ footer {
   </div>
 </section>
 
-<!-- RSVP -->
+<!-- BIBLE QUOTE -->
 <section class="section">
-  <div class="names" style="font-size:2.2rem;">RSVP</div>
-  <div class="divider"></div>
-
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email">
-    <input type="number" placeholder="Number of Guests">
-    <button type="submit">CONFIRM ATTENDANCE</button>
-  </form>
+  <div class="quote">
+    “Therefore what God has joined together,<br>
+    let no one separate.”
+    <span>— Mark 10:9</span>
+  </div>
 </section>
 
 <footer>
