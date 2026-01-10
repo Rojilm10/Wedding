@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roji & Linda</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f7f4ef;
+  --text: #2f2f2f;
+  --accent: #b7a77a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeUp 1.4s ease forwards;
+}
+
+.names {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 20px auto;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.details {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.map {
+  margin-top: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+/* RSVP */
+form {
+  margin-top: 40px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--text);
+  color: white;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  background: black;
+}
+
+footer {
+  padding: 40px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section">
+  <div class="subtitle">Save the Date</div>
+  <div class="divider"></div>
+  <div class="names">Roji & Linda</div>
+  <div class="details">
+    Together with our families<br>
+    we invite you to celebrate our wedding
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="section">
+  <div class="names" style="font-size:2.2rem;">The Wedding</div>
+  <div class="divider"></div>
+  <div class="details">
+    Saturday, 15 April 2026<br>
+    11:00 AM
+    <br><br>
+    Grand Ballroom<br>
+    St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla
+  </div>
+
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps?q=Toronto&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="section">
+  <div class="names" style="font-size:2.2rem;">RSVP</div>
+  <div class="divider"></div>
+
+  <form name="rsvp" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="rsvp">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email">
+    <input type="number" name="guests" placeholder="Number of Guests">
+    <button type="submit">CONFIRM ATTENDANCE</button>
+  </form>
+</section>
+
+<footer>
+  ROJI & LINDA
+</footer>
+
+</body>
+</html>
