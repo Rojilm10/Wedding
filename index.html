@@ -83,4 +83,134 @@ body {
 }
 .venue-image img {
   width: 100%;
-  ma
+  max-width: 520px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* RSVP */
+form {
+  margin-top: 40px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+button {
+  background: var(--text);
+  color: white;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+button:hover {
+  background: black;
+}
+
+footer {
+  padding: 40px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section">
+  <div class="subtitle">Save the Date</div>
+  <div class="divider"></div>
+  <div class="names">Roji & Linda</div>
+
+  <div id="countdown"></div>
+
+  <div class="details">
+    Together with our families<br>
+    we invite you to celebrate our wedding
+  </div>
+</section>
+
+<!-- WEDDING DETAILS -->
+<section class="section">
+  <div class="names" style="font-size:2.2rem;">The Wedding</div>
+  <div class="divider"></div>
+
+  <div class="details">
+    Wednesday, 15 April 2026<br>
+    11:30 AM
+    <br><br>
+    SC Church<br>
+    Thiruvalla, Kerala, India
+  </div>
+
+  <div class="venue-image">
+    <img src="venue.png" alt="SC Church Thiruvalla">
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="section">
+  <div class="names" style="font-size:2.2rem;">RSVP</div>
+  <div class="divider"></div>
+
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email">
+    <input type="number" placeholder="Number of Guests">
+    <button type="submit">CONFIRM ATTENDANCE</button>
+  </form>
+</section>
+
+<footer>
+  ROJI & LINDA
+</footer>
+
+<!-- COUNTDOWN SCRIPT -->
+<script>
+const weddingDate = new Date("April 15, 2026 11:30:00 GMT+0530").getTime();
+
+const timer = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML = "💍 It's Wedding Time!";
+    clearInterval(timer);
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    `<span>${days} Days</span>
+     <span>${hours} Hours</span>
+     <span>${minutes} Minutes</span>
+     <span>${seconds} Seconds</span>`;
+}, 1000);
+</script>
+
+</body>
+</html>
