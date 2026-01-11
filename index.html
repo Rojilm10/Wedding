@@ -22,10 +22,17 @@
 }
 
 body {
-  background: url('bg.jpg') center center / cover no-repeat fixed;
+  background: url('bg.jpg') center center / cover no-repeat;
+  background-attachment: scroll;
   color: var(--text);
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 /* Sections */
