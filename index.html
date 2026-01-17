@@ -1,291 +1,586 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Roji & Linda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roji & Linda - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #2d2d2d;
+            background: #fff;
+            overflow-x: hidden;
+        }
 
-<style>
-:root {
-  --overlay: rgba(247, 244, 239, 0.85);
-  --text: #2f2f2f;
-  --accent: #b7a77a;
-}
+        .top-decoration {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        .top-decoration img {
+            width: 60px;
+            opacity: 0.3;
+        }
 
-body {
-  background: url('bg.jpg') center center / cover no-repeat;
-  background-attachment: scroll;
-  color: var(--text);
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-}
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+        }
 
-@media (min-width: 768px) {
-  body {
-    background-attachment: fixed;
-  }
-}
+        .date-small {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #999;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
 
-/* Sections */
-.section {
-  min-height: 100vh;
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--overlay);
-  animation: fadeUp 1.4s ease forwards;
-}
+        .location-small {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #999;
+            letter-spacing: 2px;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+        }
 
-/* Typography */
-.subtitle {
-  font-size: 1rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  animation: fadeIn 1.2s ease 0.3s forwards;
-  opacity: 0;
-}
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            color: #2d2d2d;
+            margin: 1rem 0;
+            letter-spacing: 2px;
+        }
 
-.names {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  letter-spacing: 2px;
-  margin: 15px 0;
-  animation: scaleIn 1s ease 0.5s forwards;
-  opacity: 0;
-}
+        .ampersand {
+            font-style: italic;
+            font-weight: 300;
+        }
 
-.divider {
-  width: 60px;
-  height: 2px;
-  background: var(--accent);
-  margin: 20px auto;
-  animation: slideIn 0.8s ease 0.8s forwards;
-  opacity: 0;
-  position: relative;
-  overflow: hidden;
-}
+        .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            max-width: 500px;
+            line-height: 1.8;
+            margin: 2rem 0;
+            font-weight: 300;
+        }
 
-.divider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-  animation: shimmer 3s infinite;
-}
+        .invitation-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #2d2d2d;
+            margin-top: 2rem;
+            font-weight: 400;
+        }
 
-.details {
-  margin-top: 25px;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  animation: fadeIn 1s ease 1s forwards;
-  opacity: 0;
-}
+        .flower-divider {
+            width: 80px;
+            margin: 3rem auto;
+            opacity: 0.4;
+        }
 
-/* Countdown */
-#countdown {
-  margin-top: 20px;
-  font-size: 1.05rem;
-  letter-spacing: 2px;
-  animation: fadeIn 1s ease 1.2s forwards;
-  opacity: 0;
-}
-#countdown span {
-  display: inline-block;
-  margin: 6px 10px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-#countdown span:hover {
-  transform: translateY(-3px);
-  color: var(--accent);
-}
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-/* Venue Image */
-.venue-image {
-  margin-top: 40px;
-  animation: scaleIn 1s ease 1.4s forwards;
-  opacity: 0;
-}
-.venue-image img {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-.venue-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-}
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: #2d2d2d;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
 
-/* Bible Quote */
-.quote {
-  margin-top: 40px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  line-height: 1.6;
-  animation: fadeIn 1.2s ease 0.5s forwards;
-  opacity: 0;
-}
-.quote span {
-  display: block;
-  margin-top: 12px;
-  font-size: 0.95rem;
-  font-style: normal;
-  letter-spacing: 2px;
-  animation: fadeIn 1s ease 1s forwards;
-  opacity: 0;
-}
+        .timeline-section {
+            background: #f9f9f9;
+        }
 
-/* Footer */
-footer {
-  padding: 40px;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  animation: fadeIn 1s ease 1.5s forwards;
-  opacity: 0;
-}
+        .timeline-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #2d2d2d;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
 
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        .timeline {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+        }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+        .time {
+            font-weight: 500;
+            color: #2d2d2d;
+        }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-</style>
+        .event {
+            color: #666;
+            text-align: right;
+        }
+
+        .venue-addresses {
+            max-width: 700px;
+            margin: 3rem auto 0;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            line-height: 2;
+            color: #666;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .dress-code {
+            background: #fff;
+        }
+
+        .dress-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin: 3rem auto 0;
+            max-width: 800px;
+        }
+
+        .dress-card {
+            text-align: center;
+        }
+
+        .dress-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.6;
+        }
+
+        .dress-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #2d2d2d;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .dress-card p {
+            font-family: 'Montserrat', sans-serif;
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .dress-note {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 3rem;
+            font-style: italic;
+        }
+
+        .rsvp-section {
+            background: #f9f9f9;
+        }
+
+        .rsvp-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: #2d2d2d;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #999;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .radio-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .contact-section {
+            background: #fff;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #2d2d2d;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .contact-info p {
+            font-family: 'Montserrat', sans-serif;
+            color: #666;
+            line-height: 2;
+            font-size: 0.95rem;
+        }
+
+        .phone {
+            font-size: 1.1rem;
+            color: #2d2d2d;
+            margin: 1.5rem 0;
+        }
+
+        .footer {
+            background: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .footer-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #2d2d2d;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .footer-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #2d2d2d;
+            font-weight: 400;
+        }
+
+        .bottom-decoration {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .names {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .dress-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <script>
+        // Countdown Timer - Run immediately
+        (function() {
+            function updateCountdown() {
+                // Wedding date: April 15, 2026 at 11:30 PM
+                const weddingDate = new Date(2026, 3, 15, 23, 30, 0);
+                const now = new Date();
+                const distance = weddingDate - now;
 
-<!-- HERO -->
-<section class="section">
-  <div class="subtitle">Save the Date</div>
-  <div class="divider"></div>
-  <div class="names">Roji & Linda</div>
+                if (distance > 0) {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  <div id="countdown"></div>
+                    setTimeout(function() {
+                        const daysEl = document.getElementById('days');
+                        const hoursEl = document.getElementById('hours');
+                        const minutesEl = document.getElementById('minutes');
+                        const secondsEl = document.getElementById('seconds');
 
-  <div class="details">
-    Together with our families<br>
-    we invite you to celebrate our wedding
-  </div>
-</section>
+                        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+                        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+                        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+                        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+                    }, 100);
+                }
+            }
 
-<!-- WEDDING DETAILS -->
-<section class="section">
-  <div class="names" style="font-size:2.2rem;">The Wedding</div>
-  <div class="divider"></div>
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+    </script>
+    <div class="top-decoration">
+        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" fill="#d4c4b0"/>
+        </svg>
+    </div>
 
-  <div class="details">
-    Wednesday, 15 April 2026<br>
-    11:30 AM
-    <br><br>
-    SC Church<br>
-    Thiruvalla, Kerala, India
-  </div>
+    <div class="hero">
+        <p class="date-small">15.04.26</p>
+        <p class="date-small" style="margin-bottom: 0;">date</p>
+        <p class="location-small" style="margin-top: 0.5rem;">place</p>
+        <p class="location-small" style="margin-bottom: 2rem; margin-top: 0;">Thiruvalla</p>
+        
+        <div id="countdown" style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #666; margin: 2rem 0;">
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div id="days" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
+                    <div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Days</div>
+                </div>
+                <div style="text-align: center;">
+                    <div id="hours" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
+                    <div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Hours</div>
+                </div>
+                <div style="text-align: center;">
+                    <div id="minutes" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
+                    <div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Minutes</div>
+                </div>
+                <div style="text-align: center;">
+                    <div id="seconds" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
+                    <div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <h1 class="names">Roji <span class="ampersand">&</span> Linda</h1>
+        
+        <p class="tagline">Let's celebrate the best day of our life together!</p>
+        
+        <h2 class="invitation-title">We are inviting you<br>to our wedding!</h2>
+        
+        <svg class="flower-divider" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 20 Q40 10 50 20 Q60 10 70 20" stroke="#d4c4b0" stroke-width="1" fill="none"/>
+            <circle cx="30" cy="20" r="3" fill="#d4c4b0"/>
+            <circle cx="50" cy="20" r="4" fill="#d4c4b0"/>
+            <circle cx="70" cy="20" r="3" fill="#d4c4b0"/>
+        </svg>
+    </div>
 
-  <div class="venue-image">
-    <img src="venue.png" alt="SC Church Thiruvalla">
-  </div>
-</section>
+    <div class="section timeline-section">
+        <h2 class="section-title">Event timeline</h2>
+        <p class="timeline-date">15 April</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="time">11:30 PM</span>
+                <span class="event">Wedding ceremony</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">13:30</span>
+                <span class="event">Transfer</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">14:00</span>
+                <span class="event">Cocktail hour</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">15:00</span>
+                <span class="event">First dance</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">15:30</span>
+                <span class="event">Dinner</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">17:00</span>
+                <span class="event">Party</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">21:00</span>
+                <span class="event">Closing</span>
+            </div>
+        </div>
+        <div class="venue-addresses">
+            St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla
+        </div>
+    </div>
 
-<!-- BIBLE QUOTE -->
-<section class="section">
-  <div class="quote">
-    "Therefore what God has joined together,<br>
-    let no one separate."
-    <span>— Mark 10:9</span>
-  </div>
-</section>
+    <div class="section">
+        <p class="intro-text">
+            This spring a very special and happy event is going to happen - our wedding
+        </p>
+        <h2 class="section-title">Dear friends and family!</h2>
+        
+        <svg class="flower-divider" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="35" cy="20" r="5" fill="#d4c4b0"/>
+            <circle cx="50" cy="15" r="6" fill="#d4c4b0"/>
+            <circle cx="65" cy="20" r="5" fill="#d4c4b0"/>
+        </svg>
+        
+        <p class="intro-text">
+            It is impossible to imagine this day without our closest people. Thus, we are happy to invite you to join and share this wonderful occasion with us
+        </p>
+    </div>
 
-<footer>
-  ROJI & LINDA
-</footer>
+    <div class="section dress-code">
+        <h2 class="section-title">Dress code</h2>
+        <p class="intro-text">
+            We would be very happy if your outfit is in the colours of the wedding theme.
+        </p>
+        <div class="dress-grid">
+            <div class="dress-card">
+                <svg class="dress-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 20 L30 30 L30 80 L70 80 L70 30 Z" stroke="#2d2d2d" stroke-width="2" fill="none"/>
+                    <line x1="50" y1="20" x2="50" y2="40" stroke="#2d2d2d" stroke-width="2"/>
+                </svg>
+                <h3>Men:</h3>
+                <p>Suits, jackets, shirts, grey, champagne,<br>black colours</p>
+            </div>
+            <div class="dress-card">
+                <svg class="dress-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 20 L35 35 L25 80 L75 80 L65 35 Z" stroke="#2d2d2d" stroke-width="2" fill="none"/>
+                    <line x1="35" y1="35" x2="65" y2="35" stroke="#2d2d2d" stroke-width="2"/>
+                </svg>
+                <h3>Women:</h3>
+                <p>Cocktail dresses or suits, champagne, grey colours.</p>
+            </div>
+        </div>
+        <p class="dress-note">
+            Also we recommend to wear comfortable shoes because the wedding will be outdoors.
+        </p>
+    </div>
 
-<!-- COUNTDOWN SCRIPT -->
-<script>
-const weddingDate = new Date("April 15, 2026 11:30:00 GMT+0530").getTime();
 
-const timer = setInterval(() => {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
 
-  if (distance < 0) {
-    document.getElementById("countdown").innerHTML = "💍 It's Wedding Time!";
-    clearInterval(timer);
-    return;
-  }
+    <div class="section contact-section">
+        <h2 class="section-title">Organizational aspects</h2>
+        <div class="contact-info">
+            <p class="phone">+31 6845965887</p>
+            <p>
+                If you have any questions, you can always contact the organizer of our wedding - Linda
+            </p>
+            <p style="margin-top: 2rem;">
+                Also, we would be very happy to see creative approaches to congratulations. For example, if you remember a funny story related to us to share with guests and laugh all together.
+            </p>
+        </div>
+    </div>
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    <div class="section">
+        <h2 class="section-title">The location</h2>
+        <div style="text-align: center; margin-top: 2rem;">
+            <img src="venue.jpg" alt="St. Thomas Mar Thoma Syrian Church" style="max-width: 600px; width: 100%; height: auto; border-radius: 10px;">
+            <p style="font-family: 'Montserrat', sans-serif; color: #666; margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.8;">
+                St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla
+            </p>
+        </div>
+    </div>
 
-  document.getElementById("countdown").innerHTML =
-    `<span>${days} Days</span>
-     <span>${hours} Hours</span>
-     <span>${minutes} Minutes</span>
-     <span>${seconds} Seconds</span>`;
-}, 1000);
-</script>
+    <div class="footer">
+        <p class="footer-title">Hope to see you there</p>
+        <p class="footer-names">Roji and Linda</p>
+    </div>
+
+    <div class="bottom-decoration">
+        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" fill="#d4c4b0"/>
+        </svg>
+    </div>
+
 
 </body>
 </html>
