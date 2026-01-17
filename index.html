@@ -38,7 +38,27 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: #fff;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 248, 245, 0.7);
+            z-index: 0;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
         }
 
         .date-small {
@@ -551,9 +571,6 @@
         <h2 class="section-title">Organizational aspects</h2>
         <div class="contact-info">
             <p class="phone">+31 6845965887</p>
-            <p>
-              
-            </p>
             <p style="margin-top: 2rem;">
                 Also, we would be very happy to see creative approaches to congratulations. For example, if you remember a funny story related to us to share with guests and laugh all together.
             </p>
