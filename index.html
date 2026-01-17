@@ -38,7 +38,7 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('./background.jpg');
+            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -397,17 +397,29 @@
         }
 
         .image-container {
-            text-align: center;
+            text-align: right;
             margin: 3rem 0;
+            padding-right: 5%;
         }
 
         .image-container img {
-            max-width: 500px;
-            width: 90%;
+            max-width: 400px;
+            width: 80%;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
+
+        @media (max-width: 768px) {
+            .image-container {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .image-container img {
+                width: 85%;
+                max-width: 350px;
+            }
 
         @media (max-width: 768px) {
             .names {
@@ -532,8 +544,7 @@
         </div>
         
         
-        
-        <h2 class="section-title">Dear friends and family!</h2>
+        <h2 class="section-title">Our Story!</h2>
         
         <svg class="flower-divider" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="35" cy="20" r="5" fill="#d4c4b0"/>
@@ -542,26 +553,16 @@
         </svg>
         
         <p class="intro-text">
-            It is impossible to imagine this day without our closest people. Thus, we are happy to invite you to join and share this wonderful occasion with us
+           23 August 2025 – The First Meeting
+
+            6 September 2025 – The First Visit
+
+            Frequent visits and growing bond (keep this brief and warm)
+
+            30 December 2025 – The Proposal
         </p>
         
-        <div class="image-container scroll-image">
-            <img src="pic2.jpg" alt="Roji and Linda">
-        </div>
-    </div>
-
-    <div class="section contact-section">
-        <h2 class="section-title">Organizational aspects</h2>
-        <div class="contact-info">
-            <p class="phone">+31 6845965887</p>
-            <p>
-                If you have any questions, you can always contact the organizer of our wedding - Linda
-            </p>
-            <p style="margin-top: 2rem;">
-                Also, we would be very happy to see creative approaches to congratulations. For example, if you remember a funny story related to us to share with guests and laugh all together.
-            </p>
-        </div>
-    </div>
+   
 
     <div class="section">
         <h2 class="section-title">The location</h2>
@@ -573,7 +574,6 @@
         </div>
     </div>
 
-    
     </div>
 
     <div class="footer">
