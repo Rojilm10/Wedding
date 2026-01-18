@@ -44,6 +44,14 @@
             background-attachment: fixed;
             position: relative;
         }
+        
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
 
         .hero::before {
             content: '';
@@ -411,28 +419,78 @@
         }
 
         @media (max-width: 768px) {
-            .image-container {
-                text-align: center;
-                padding-right: 0;
+            .hero {
+                min-height: 100vh;
+                padding: 1.5rem;
             }
 
-            .image-container img {
-                width: 85%;
-                max-width: 350px;
-            }
-
-        @media (max-width: 768px) {
             .names {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                letter-spacing: 1px;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 0.9rem;
+            }
+
+            .invitation-title {
+                font-size: 1.5rem;
+            }
+
+            #countdown {
+                font-size: 1rem !important;
+            }
+
+            #countdown > div {
+                gap: 1rem !important;
+            }
+
+            #countdown > div > div > div:first-child {
+                font-size: 1.8rem !important;
+            }
+
+            #countdown > div > div > div:last-child {
+                font-size: 0.7rem !important;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
             }
 
             .dress-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2.5rem;
+            }
+
+            .timeline {
+                padding: 1rem;
+            }
+
+            .timeline-date {
+                font-size: 1.6rem;
+            }
+
+            .image-container {
+                text-align: center;
+                padding-right: 0;
+                margin: 2rem 0;
+            }
+
+            .image-container img {
+                width: 90%;
+                max-width: 350px;
+            }
+
+            .intro-text {
+                font-size: 0.95rem;
+            }
+
+            .venue-addresses {
+                font-size: 0.85rem;
             }
         }
     </style>
