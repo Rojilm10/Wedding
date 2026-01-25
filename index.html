@@ -131,6 +131,41 @@
             margin: 0 auto;
         }
 
+        .story-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('./background2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: lighten;
+            padding: 6rem 2rem;
+            margin: 0;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        .story-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 248, 245, 0.5);
+            z-index: 0;
+        }
+        
+        .story-section > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .story-section {
+                background-attachment: scroll;
+                padding: 4rem 1.5rem;
+            }
+        }
+
         .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
@@ -600,8 +635,9 @@
         <div class="image-container scroll-image">
             <img src="pic1.jpg" alt="Roji and Linda">
         </div>
-        
-        
+    </div>
+    
+    <div class="section story-section">
         <h2 class="section-title">Our Story!</h2>
         
         <svg class="flower-divider" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -611,17 +647,13 @@
         </svg>
         
         <p class="intro-text">
-           23 August 2025 – The First Meeting
-
-            6 September 2025 – The First Visit
-
-            Frequent visits and growing bond (keep this brief and warm)
-
-            30 December 2025 – The Proposal
+           23 August 2025 – The First Meeting<br><br>
+           6 September 2025 – The First Visit<br><br>
+           Frequent visits and growing bond<br><br>
+           30 December 2025 – The Proposal
         </p>
-        
-   
-
+    </div>
+    
     <div class="section">
         <h2 class="section-title">The location</h2>
         <div style="text-align: center; margin-top: 2rem;">
@@ -630,8 +662,6 @@
                 St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla
             </p>
         </div>
-    </div>
-
     </div>
 
     <div class="footer">
@@ -644,7 +674,6 @@
             <path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" fill="#d4c4b0"/>
         </svg>
     </div>
-
 
 </body>
 </html>
