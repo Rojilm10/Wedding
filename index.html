@@ -1,3 +1,116 @@
+
+
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Roji & Linda - Wedding Invitation</title> <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@3
+
+pasted
+
+Perfect! Now you have 6 photos that are:
+* Stretched from left edge to right edge of the website
+* Connected/overlapping slightly with negative margins (margin: 0 -10px) to create a seamless ribbon effect
+* Each photo takes equal space across the full width
+* Tilted at different angles for the flashy effect
+* White borders and shadows for elegance
+* Fully responsive
+The photos now form a continuous connected ribbon that spans the entire width of your page with 6 images instead of 4! Reconstruct the current code to meet the required changes
+
+Show more
+11:10 p.m.
+I'll help you reconstruct the code to create a seamless photo ribbon with 6 images spanning the full width. Let me first check the current structure and then make the necessary changes.
+
+
+Check the uploaded HTML file to understand the current structure
+plaintext
+
+Here are the files and directories up to 2 levels deep in /mnt/user-data/uploads, excluding hidden items and node_modules:
+0	/mnt/user-data/uploads
+Now I'll create the updated HTML file with a seamless photo ribbon featuring 6 connected images:
+
+
+Creating updated wedding invitation HTML with 6-photo ribbon spanning full width
+wedding-invitation.html
+
+Presented file
+Perfect! I've reconstructed your wedding invitation with a seamless 6-photo ribbon that spans the full width of the page. Here are the key changes:
+
+What's New:
+✨ 6 Connected Photos - Changed from the SVG film strip to a modern flexbox ribbon with 6 images
+
+Photos stretch edge-to-edge across the full width
+Negative margins (margin: 0 -10px) create overlapping/connected effect
+Equal spacing for each photo using flex: 1
+🎨 Flashy Tilted Effect - Each photo has a unique rotation angle:
+
+Photo 1: -3°
+Photo 2: +2°
+Photo 3: -2°
+Photo 4: +3°
+Photo 5: -1°
+Photo 6: +2°
+💫 Elegant Styling:
+
+White borders (8px) around each photo
+Box shadows for depth
+Hover effect (scales to 1.05x)
+Rounded corners
+📱 Fully Responsive:
+
+Desktop: 6 photos in a row
+Tablet: 3 photos per row
+Mobile: Stacked vertically without rotation
+The photos now form a continuous connected ribbon spanning your entire page width - just replace photo1.png through photo6.png with your actual image files!
+
+Wedding invitation
+Code · HTML 
+in a single strip or in single line(horizontally)
+
+11:13 p.m.
+
+1 step
+
+Update mobile responsive styles to keep photos in a single horizontal line with scroll
++17
+-14
+wedding-invitation.html
+
+Presented file
+Perfect! Now all 6 photos stay in a single horizontal line on all devices:
+
+✅ Desktop: Photos span the full width in one seamless ribbon ✅ Tablet/Mobile: Photos remain in a single horizontal line with smooth horizontal scrolling if needed ✅ Connected Effect: Negative margins (margin: 0 -10px) keep photos overlapping ✅ Tilted Angles: Each photo maintains its unique rotation for that flashy effect
+
+The photos will never stack vertically - they always stay in one continuous horizontal strip!
+
+Wedding invitation
+Code · HTML 
+I dont need 6 photos keep it 5 but make it connected from end to end
+
+11:15 p.m.
+
+2 steps
+
+Update mobile responsive to keep 5 photos in single line end to end
++28
+-17
+wedding-invitation.html
+
+Presented file
+Perfect! Now you have 5 photos connected end to end in a seamless horizontal ribbon:
+
+✅ 5 Photos: Reduced from 6 to 5 ✅ End to End: First photo starts at the left edge, last photo ends at the right edge (no margins on ends) ✅ Connected: Photos overlap in the middle with negative margins (margin: 0 -15px) ✅ Equal Width: Each photo takes equal space using flex: 1 ✅ Tilted Effect: Each photo has a unique rotation angle ✅ Responsive: On mobile, they stay in one horizontal line with scroll if needed
+
+The photos now form one continuous connected ribbon stretching from the far left to the far right of your page!
+
+Wedding invitation
+Code · HTML 
+
+
+Want to be notified when Claude responds?
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Wedding invitation · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -454,29 +567,74 @@ border-radius: 15px;
 box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/*.film-strip-container {
+/* Photo Ribbon Styles */
+.photo-ribbon-container {
 width: 100%;
-overflow-x: auto;
-overflow-y: hidden;
-padding: 2rem 0;
-margin: 2rem 0;
-}*/
+overflow: hidden;
+padding: 4rem 0;
+margin: 3rem 0;
+background: transparent;
+}
 
-/*.film-strip-svg {
+.photo-ribbon {
+display: flex;
+justify-content: center;
+align-items: center;
 width: 100%;
-max-width: 1200px;
-height: auto;
-display: block;
-margin: 0 auto;
-}*/
+margin: 0;
+padding: 0;
+}
 
-/*.film-frame-group {
+.photo-item {
+flex: 1;
+margin: 0 -15px;
+position: relative;
 transition: transform 0.3s ease;
-cursor: pointer;
-}*/
+z-index: 1;
+}
 
-.film-frame-group:hover {
-transform: scale(1.05);
+.photo-item:first-child {
+margin-left: 0;
+}
+
+.photo-item:last-child {
+margin-right: 0;
+}
+
+.photo-item:hover {
+transform: scale(1.05) !important;
+z-index: 10;
+}
+
+.photo-item img {
+width: 100%;
+height: 280px;
+object-fit: cover;
+border: 8px solid #fff;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+border-radius: 8px;
+display: block;
+}
+
+/* Individual photo tilts */
+.photo-item:nth-child(1) {
+transform: rotate(-3deg);
+}
+
+.photo-item:nth-child(2) {
+transform: rotate(2deg);
+}
+
+.photo-item:nth-child(3) {
+transform: rotate(-1deg);
+}
+
+.photo-item:nth-child(4) {
+transform: rotate(3deg);
+}
+
+.photo-item:nth-child(5) {
+transform: rotate(-2deg);
 }
 
 @media (max-width: 768px) {
@@ -554,8 +712,32 @@ font-size: 0.95rem;
 font-size: 0.85rem;
 }
 
-.film-strip-svg {
+.photo-ribbon-container {
 overflow-x: auto;
+padding: 2rem 0;
+}
+
+.photo-ribbon {
+padding: 0;
+min-width: 100%;
+}
+
+.photo-item {
+flex: 1;
+min-width: 120px;
+margin: 0 -10px;
+}
+
+.photo-item:first-child {
+margin-left: 0;
+}
+
+.photo-item:last-child {
+margin-right: 0;
+}
+
+.photo-item img {
+height: 200px;
 }
 }
 </style>
@@ -651,10 +833,6 @@ window.addEventListener('load', checkScroll);
 </div>
 
 <div class="section story-section">
-<p class="intro-text"></p>
-<div class="image-container scroll-image"></div>
-
-<div style="margin-top: 2rem;"></div>
 <h2 class="section-title" style="margin-bottom: 1rem;">In the Quiet of Time</h2>
 
 <p class="intro-text">
@@ -663,106 +841,25 @@ What unfolded over time became a bond rooted in faith,<br> understanding, and co
 With thankful hearts,<br> we step forward into a life meant to be shared.    
 </p>
 
-<div class="film-strip-container" style="margin-top: 1.5rem;">
-<svg class="film-strip-svg" viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<!--<pattern id="sprockets" x="0" y="0" width="25" height="50" patternUnits="userSpaceOnUse">
-<rect x="8" y="10" width="9" height="15" rx="1" fill="#ffffff" opacity="0.6"/>
-<rect x="8" y="35" width="9" height="15" rx="1" fill="#ffffff" opacity="0.6"/>
-</pattern>-->
-<filter id="softShadow">
-<feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
-<feOffset dx="0" dy="4" result="offsetblur"/>
-<feComponentTransfer>
-<feFuncA type="linear" slope="0.2"/>
-</feComponentTransfer>
-<feMerge>
-<feMergeNode/>
-<feMergeNode in="SourceGraphic"/>
-</feMerge>
-</filter>
-<clipPath id="frame1"><rect x="225" y="145" width="220" height="165" rx="8"/></clipPath>
-<clipPath id="frame2"><rect x="525" y="165" width="220" height="165" rx="8"/></clipPath>
-<clipPath id="frame3"><rect x="825" y="152" width="220" height="165" rx="8"/></clipPath>
-<clipPath id="frame4"><rect x="1125" y="160" width="220" height="165" rx="8"/></clipPath>
-<linearGradient id="filmGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-<stop offset="0%" style="stop-color:#f0e6d2;stop-opacity:1" />
-<stop offset="50%" style="stop-color:#e8dcc0;stop-opacity:1" />
-<stop offset="100%" style="stop-color:#f0e6d2;stop-opacity:1" />
-</linearGradient>
-<linearGradient id="filmGradient3D" x1="0%" y1="0%" x2="0%" y2="100%">
-<stop offset="0%" style="stop-color:#f8f0e0;stop-opacity:1" />
-<stop offset="30%" style="stop-color:#e8dcc0;stop-opacity:1" />
-<stop offset="70%" style="stop-color:#e0d4b8;stop-opacity:1" />
-<stop offset="100%" style="stop-color:#f8f0e0;stop-opacity:1" />
-</linearGradient>
-</defs>
-
-<!-- Main film strip body with gentle wave curve -->
-<path d="M 100,200 Q 400,140 700,180 Q 1000,220 1300,170 Q 1400,150 1500,165 L 1500,280 Q 1400,295 1300,285 Q 1000,335 700,295 Q 400,255 100,315 Z" 
-      fill="url(#filmGradient3D)" 
-      stroke="#d4c4a8" 
-      stroke-width="1.5" 
-      opacity="0.95"
-      filter="url(#softShadow)"/>
-
-<!-- Top sprocket holes pattern -->
-<rect x="100" y="185" width="1400" height="25" fill="url(#sprockets)" opacity="0.9"/>
-
-<!-- Bottom sprocket holes pattern -->
-<rect x="100" y="295" width="1400" height="25" fill="url(#sprockets)" opacity="0.9"/>
-
-<!-- Photo frames with thicker white borders and shadow -->
-<g class="film-frame-group">
-<rect x="220" y="140" width="230" height="175" rx="8" fill="#ffffff" stroke="#f0e6d8" stroke-width="6" opacity="1" filter="url(#softShadow)"/>
-<rect x="225" y="145" width="220" height="165" rx="8" fill="#f9f6f0" stroke="#e0d4c4" stroke-width="1.5"/>
-<image href="photo1.png" x="225" y="145" width="220" height="165" clip-path="url(#frame1)" preserveAspectRatio="xMidYMid slice" opacity="1"/>
-</g>
-
-<g class="film-frame-group">
-<rect x="520" y="160" width="230" height="175" rx="8" fill="#ffffff" stroke="#f0e6d8" stroke-width="6" opacity="1" filter="url(#softShadow)"/>
-<rect x="525" y="165" width="220" height="165" rx="8" fill="#f9f6f0" stroke="#e0d4c4" stroke-width="1.5"/>
-<image href="photo2.png" x="525" y="165" width="220" height="165" clip-path="url(#frame2)" preserveAspectRatio="xMidYMid slice" opacity="1"/>
-</g>
-
-<g class="film-frame-group">
-<rect x="820" y="147" width="230" height="175" rx="8" fill="#ffffff" stroke="#f0e6d8" stroke-width="6" opacity="1" filter="url(#softShadow)"/>
-<rect x="825" y="152" width="220" height="165" rx="8" fill="#f9f6f0" stroke="#e0d4c4" stroke-width="1.5"/>
-<image href="photo3.png" x="825" y="152" width="220" height="165" clip-path="url(#frame3)" preserveAspectRatio="xMidYMid slice" opacity="1"/>
-</g>
-
-<g class="film-frame-group">
-<rect x="1120" y="155" width="230" height="175" rx="8" fill="#ffffff" stroke="#f0e6d8" stroke-width="6" opacity="1" filter="url(#softShadow)"/>
-<rect x="1125" y="160" width="220" height="165" rx="8" fill="#f9f6f0" stroke="#e0d4c4" stroke-width="1.5"/>
-<image href="photo4.png" x="1125" y="160" width="220" height="165" clip-path="url(#frame4)" preserveAspectRatio="xMidYMid slice" opacity="1"/>
-</g>
-<g class="film-frame-group">
-<rect x="20" y="140" width="230" height="175" rx="8" fill="#ffffff" stroke="#f0e6d8" stroke-width="6" opacity="1" filter="url(#softShadow)"/>
-<rect x="25" y="145" width="220" height="165" rx="8" fill="#f9f6f0" stroke="#e0d4c4" stroke-width="1.5"/>
-<image href="photo5.png" x="1125" y="160" width="220" height="165" clip-path="url(#frame4)" preserveAspectRatio="xMidYMid slice" opacity="1"/>
-</g>
-
-<g class="film-frame-group">
-<rect x="1320" y="155" width="230" height="175" rx="8" fill="#ffffff" stroke="#f0e6d8" stroke-width="6" opacity="1" filter="url(#softShadow)"/>
-<rect x="1325" y="160" width="220" height="165" rx="8" fill="#f9f6f0" stroke="#e0d4c4" stroke-width="1.5"/>
-<image href="photo6.png" x="1125" y="160" width="220" height="165" clip-path="url(#frame4)" preserveAspectRatio="xMidYMid slice" opacity="1"/>
-</g>     
-<!-- Delicate floral details on left edge -->
-<g opacity="0.25">
-<path d="M 80,180 Q 85,175 90,180 L 95,185 Q 90,188 85,185 Z" fill="#d4c4b0"/>
-<ellipse cx="70" cy="210" rx="10" ry="14" fill="#d4c4b0" opacity="0.4" transform="rotate(-20 70 210)"/>
-<ellipse cx="65" cy="225" rx="7" ry="11" fill="#d4c4b0" opacity="0.4" transform="rotate(10 65 225)"/>
-<path d="M 70,210 Q 67,218 65,225" stroke="#c9b8a3" stroke-width="1.5" fill="none" opacity="0.5"/>
-</g>
-
-<!-- Delicate floral details on right edge -->
-<g opacity="0.25">
-<path d="M 1510,175 Q 1515,170 1520,175 L 1525,180 Q 1520,183 1515,180 Z" fill="#d4c4b0"/>
-<ellipse cx="1530" cy="205" rx="10" ry="14" fill="#d4c4b0" opacity="0.4" transform="rotate(20 1530 205)"/>
-<ellipse cx="1535" cy="220" rx="7" ry="11" fill="#d4c4b0" opacity="0.4" transform="rotate(-10 1535 220)"/>
-<path d="M 1530,205 Q 1533,213 1535,220" stroke="#c9b8a3" stroke-width="1.5" fill="none" opacity="0.5"/>
-</g>
-</svg>
+<!-- NEW: 5-Photo Ribbon spanning full width end to end -->
+<div class="photo-ribbon-container">
+<div class="photo-ribbon">
+<div class="photo-item">
+<img src="photo1.png" alt="Roji & Linda Photo 1">
+</div>
+<div class="photo-item">
+<img src="photo2.png" alt="Roji & Linda Photo 2">
+</div>
+<div class="photo-item">
+<img src="photo3.png" alt="Roji & Linda Photo 3">
+</div>
+<div class="photo-item">
+<img src="photo4.png" alt="Roji & Linda Photo 4">
+</div>
+<div class="photo-item">
+<img src="photo5.png" alt="Roji & Linda Photo 5">
+</div>
+</div>
 </div>
 </div>
 
