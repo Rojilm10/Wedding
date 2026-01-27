@@ -1,116 +1,3 @@
-
-
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Roji & Linda - Wedding Invitation</title> <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@3
-
-pasted
-
-Perfect! Now you have 6 photos that are:
-* Stretched from left edge to right edge of the website
-* Connected/overlapping slightly with negative margins (margin: 0 -10px) to create a seamless ribbon effect
-* Each photo takes equal space across the full width
-* Tilted at different angles for the flashy effect
-* White borders and shadows for elegance
-* Fully responsive
-The photos now form a continuous connected ribbon that spans the entire width of your page with 6 images instead of 4! Reconstruct the current code to meet the required changes
-
-Show more
-11:10 p.m.
-I'll help you reconstruct the code to create a seamless photo ribbon with 6 images spanning the full width. Let me first check the current structure and then make the necessary changes.
-
-
-Check the uploaded HTML file to understand the current structure
-plaintext
-
-Here are the files and directories up to 2 levels deep in /mnt/user-data/uploads, excluding hidden items and node_modules:
-0	/mnt/user-data/uploads
-Now I'll create the updated HTML file with a seamless photo ribbon featuring 6 connected images:
-
-
-Creating updated wedding invitation HTML with 6-photo ribbon spanning full width
-wedding-invitation.html
-
-Presented file
-Perfect! I've reconstructed your wedding invitation with a seamless 6-photo ribbon that spans the full width of the page. Here are the key changes:
-
-What's New:
-✨ 6 Connected Photos - Changed from the SVG film strip to a modern flexbox ribbon with 6 images
-
-Photos stretch edge-to-edge across the full width
-Negative margins (margin: 0 -10px) create overlapping/connected effect
-Equal spacing for each photo using flex: 1
-🎨 Flashy Tilted Effect - Each photo has a unique rotation angle:
-
-Photo 1: -3°
-Photo 2: +2°
-Photo 3: -2°
-Photo 4: +3°
-Photo 5: -1°
-Photo 6: +2°
-💫 Elegant Styling:
-
-White borders (8px) around each photo
-Box shadows for depth
-Hover effect (scales to 1.05x)
-Rounded corners
-📱 Fully Responsive:
-
-Desktop: 6 photos in a row
-Tablet: 3 photos per row
-Mobile: Stacked vertically without rotation
-The photos now form a continuous connected ribbon spanning your entire page width - just replace photo1.png through photo6.png with your actual image files!
-
-Wedding invitation
-Code · HTML 
-in a single strip or in single line(horizontally)
-
-11:13 p.m.
-
-1 step
-
-Update mobile responsive styles to keep photos in a single horizontal line with scroll
-+17
--14
-wedding-invitation.html
-
-Presented file
-Perfect! Now all 6 photos stay in a single horizontal line on all devices:
-
-✅ Desktop: Photos span the full width in one seamless ribbon ✅ Tablet/Mobile: Photos remain in a single horizontal line with smooth horizontal scrolling if needed ✅ Connected Effect: Negative margins (margin: 0 -10px) keep photos overlapping ✅ Tilted Angles: Each photo maintains its unique rotation for that flashy effect
-
-The photos will never stack vertically - they always stay in one continuous horizontal strip!
-
-Wedding invitation
-Code · HTML 
-I dont need 6 photos keep it 5 but make it connected from end to end
-
-11:15 p.m.
-
-2 steps
-
-Update mobile responsive to keep 5 photos in single line end to end
-+28
--17
-wedding-invitation.html
-
-Presented file
-Perfect! Now you have 5 photos connected end to end in a seamless horizontal ribbon:
-
-✅ 5 Photos: Reduced from 6 to 5 ✅ End to End: First photo starts at the left edge, last photo ends at the right edge (no margins on ends) ✅ Connected: Photos overlap in the middle with negative margins (margin: 0 -15px) ✅ Equal Width: Each photo takes equal space using flex: 1 ✅ Tilted Effect: Each photo has a unique rotation angle ✅ Responsive: On mobile, they stay in one horizontal line with scroll if needed
-
-The photos now form one continuous connected ribbon stretching from the far left to the far right of your page!
-
-Wedding invitation
-Code · HTML 
-
-
-Want to be notified when Claude responds?
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Wedding invitation · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -571,7 +458,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 .photo-ribbon-container {
 width: 100%;
 overflow: hidden;
-padding: 4rem 0;
+padding: 4rem 0 2rem 0;
 margin: 3rem 0;
 background: transparent;
 }
@@ -635,6 +522,29 @@ transform: rotate(3deg);
 
 .photo-item:nth-child(5) {
 transform: rotate(-2deg);
+}
+
+/* Centered Circular Image */
+.circle-image-container {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 3rem;
+padding: 0 2rem;
+}
+
+.circle-image {
+width: 250px;
+height: 250px;
+border-radius: 50%;
+object-fit: cover;
+border: 10px solid #fff;
+box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+transition: transform 0.3s ease;
+}
+
+.circle-image:hover {
+transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -738,6 +648,17 @@ margin-right: 0;
 
 .photo-item img {
 height: 200px;
+}
+
+.circle-image-container {
+margin-top: 2rem;
+padding: 0 1rem;
+}
+
+.circle-image {
+width: 180px;
+height: 180px;
+border: 8px solid #fff;
 }
 }
 </style>
@@ -859,6 +780,11 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 <div class="photo-item">
 <img src="photo5.png" alt="Roji & Linda Photo 5">
 </div>
+</div>
+
+<!-- Centered Circular Image -->
+<div class="circle-image-container">
+<img src="circle-photo.png" alt="Roji & Linda" class="circle-image">
 </div>
 </div>
 </div>
