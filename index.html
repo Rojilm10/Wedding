@@ -762,67 +762,22 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 
 <div class="section">
 <h2 class="section-title">Find Your Way To Us</h2>
-<div style="text-align: center; margin-top: 2rem;">
-<img src="venue.jpg" alt="St. Thomas Mar Thoma Syrian Church" style="max-width: 600px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-<p style="font-family: 'Montserrat', sans-serif; color: #666; margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.8;">
+<p style="font-family: 'Montserrat', sans-serif; color: #666; margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.8; text-align: center;">
 St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla
 </p>
 
-<!-- Interactive Map Section -->
-<div style="margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-<div style="background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1.5rem;">Get Directions</h3>
-
-<div style="margin-bottom: 1.5rem;">
-<label for="startLocation" style="display: block; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; text-align: left;">Your Current Location:</label>
-<input type="text" id="startLocation" placeholder="Enter your location or address" style="width: 100%; padding: 0.75rem; border: 2px solid #d4c4b0; border-radius: 5px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">
-</div>
-
-<button onclick="getDirections()" style="background: #b8a88a; color: #fff; border: none; padding: 0.75rem 2rem; border-radius: 5px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; cursor: pointer; transition: background 0.3s; width: 100%; margin-bottom: 1rem;">
-Get Directions
-</button>
-
-<button onclick="openInGoogleMaps()" style="background: #7a9b76; color: #fff; border: none; padding: 0.75rem 2rem; border-radius: 5px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; cursor: pointer; transition: background 0.3s; width: 100%;">
-Open in Google Maps
-</button>
-</div>
-
-<!-- Embedded Map -->
-<div style="margin-top: 2rem; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-<iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.864838876924!2d76.57199877501463!3d9.383399590818874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062478e44c0e87%3A0x794a85a879488bc0!2sSt.%20Thomas%20Mar%20Thoma%20Syrian%20Church%2C%20SCS!5e0!3m2!1sen!2sin!4v1706000000000!5m2!1sen!2sin" 
-width="100%" 
-height="400" 
-style="border:0;" 
-allowfullscreen="" 
-loading="lazy" 
-referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+<!-- QR Code Section -->
+<div style="margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">
+<div style="background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); display: inline-block;">
+<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1rem;">Scan to Get Directions</h3>
+<p style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Scan this QR code with your phone to open Google Maps</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://share.google/E38cyGxiRlFyIRftt" alt="QR Code for Church Location" style="width: 300px; height: 300px; border: 3px solid #b8a88a; border-radius: 10px; padding: 10px; background: white;">
+<p style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #999; margin-top: 1rem;">Or <a href="https://share.google/E38cyGxiRlFyIRftt" target="_blank" style="color: #7a9b76; text-decoration: none; font-weight: 500;">click here</a> to open directly</p>
 </div>
 </div>
 </div>
 </div>
-
-<script>
-function getDirections() {
-const startLocation = document.getElementById('startLocation').value;
-const destination = "St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla";
-
-if (startLocation.trim() === '') {
-alert('Please enter your current location');
-return;
-}
-
-// Open Google Maps with directions
-const url = https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(startLocation)}&destination=${encodeURIComponent(destination)};
-window.open(url, '_blank');
-}
-
-function openInGoogleMaps() {
-// Direct link to the church location
-window.open('https://maps.app.goo.gl/qOx2qwyOOBbskGjsD', '_blank');
-}
-</script>
+</div>
 
 <div class="footer">
 <p class="footer-title">Hope to see you there</p>
