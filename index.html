@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roji & Linda - Wedding Invitation</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 * {
 margin: 0;
@@ -15,21 +15,197 @@ box-sizing: border-box;
 body {
 font-family: 'Montserrat', sans-serif;
 color: #2d2d2d;
-background: #fff;
+background: #f8f6f3;
 overflow-x: hidden;
 }
 
-.top-decoration {
+/* Main Container */
+.invitation-wrapper {
+max-width: 600px;
+margin: 2rem auto;
+background: #f8f6f3;
+padding: 3rem 2rem;
+position: relative;
+}
+
+/* Monogram Circle at Top */
+.monogram-circle {
+width: 120px;
+height: 120px;
+margin: 0 auto 2rem;
+border: 3px solid #b8a88a;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+background: rgba(255, 255, 255, 0.5);
+}
+
+.monogram-text {
+font-family: 'Great Vibes', cursive;
+font-size: 3rem;
+color: #7a9b76;
+}
+
+/* Top Leaf Decoration */
+.leaf-decoration-top {
+text-align: center;
+margin-bottom: 2rem;
+}
+
+.leaf-decoration-top svg {
+width: 80px;
+height: auto;
+}
+
+/* Horizontal Divider */
+.horizontal-divider {
 width: 100%;
-padding: 20px 0;
+height: 1px;
+background: linear-gradient(to right, transparent 10%, #b8a88a 50%, transparent 90%);
+margin: 2rem 0;
+position: relative;
+}
+
+/* Event Section */
+.event-section {
+position: relative;
+padding: 2rem 0;
+}
+
+/* Event Title */
+.event-title {
+font-family: 'Great Vibes', cursive;
+font-size: 3.5rem;
+color: #5a5a5a;
+text-align: center;
+margin-bottom: 1rem;
+line-height: 1;
+}
+
+.event-month {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.75rem;
+color: #999;
+text-transform: uppercase;
+letter-spacing: 4px;
+text-align: center;
+margin-bottom: 0.5rem;
+}
+
+/* Photo Frame - Below the line, left-aligned */
+.photo-frame-container {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+margin: 2rem 0;
+}
+
+.photo-frame {
+width: 140px;
+height: 140px;
+flex-shrink: 0;
+border: 3px solid #b8a88a;
+overflow: hidden;
+background: #fff;
+position: relative;
+}
+
+.photo-frame img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+/* Date Info - Right side next to photo */
+.date-content {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding-left: 2rem;
+}
+
+.horizontal-line-separator {
+width: 60px;
+height: 1px;
+background: #b8a88a;
+margin-bottom: 0.8rem;
+}
+
+.date-number-container {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1.5rem;
+margin: 1.5rem 0;
+}
+
+.side-lines-left,
+.side-lines-right {
+display: flex;
+flex-direction: column;
+gap: 25px;
+align-items: center;
+}
+
+.day-label {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.65rem;
+color: #666;
+text-transform: uppercase;
+letter-spacing: 1.5px;
 text-align: center;
 }
 
-.top-decoration img {
-width: 60px;
-opacity: 0.3;
+.line-short {
+width: 70px;
+height: 1px;
+background: #b8a88a;
 }
 
+.date-day {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.85rem;
+color: #666;
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-bottom: 1.5rem;
+}
+
+.date-number {
+font-size: 4.5rem;
+font-weight: 500;
+color: #2d2d2d;
+line-height: 1;
+font-family: 'Montserrat', sans-serif;
+}
+
+.date-time {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.85rem;
+color: #666;
+margin-bottom: 0.5rem;
+}
+
+.date-year {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.85rem;
+color: #999;
+margin-top: 0.5rem;
+}
+
+/* Venue */
+.venue-text {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.95rem;
+color: #666;
+text-align: center;
+margin-top: 2rem;
+}
+
+/* Story Section */
 .hero {
 min-height: 90vh;
 display: flex;
@@ -38,19 +214,11 @@ align-items: center;
 justify-content: center;
 text-align: center;
 padding: 2rem;
-background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('./background.jpg');
+background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), linear-gradient(135deg, #f5f0e8 0%, #e8dfd0 100%);
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
 position: relative;
-}
-
-@media (max-width: 768px) {
-.hero {
-background-attachment: scroll;
-background-size: cover;
-background-position: center center;
-}
 }
 
 .hero::before {
@@ -69,24 +237,6 @@ position: relative;
 z-index: 1;
 }
 
-.date-small {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.9rem;
-color: #999;
-letter-spacing: 2px;
-margin-bottom: 1rem;
-text-transform: uppercase;
-}
-
-.location-small {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.9rem;
-color: #999;
-letter-spacing: 2px;
-margin-bottom: 3rem;
-text-transform: uppercase;
-}
-
 .names {
 font-family: 'Cormorant Garamond', serif;
 font-size: 5rem;
@@ -98,16 +248,6 @@ letter-spacing: 2px;
 
 .ampersand {
 font-style: italic;
-font-weight: 300;
-}
-
-.tagline {
-font-family: 'Montserrat', sans-serif;
-font-size: 1rem;
-color: #666;
-max-width: 500px;
-line-height: 1.8;
-margin: 2rem 0;
 font-weight: 300;
 }
 
@@ -132,7 +272,7 @@ margin: 0 auto;
 }
 
 .story-section {
-background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('./background2.png');
+background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), linear-gradient(135deg, #faf8f5 0%, #f0ebe0 100%);
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
@@ -159,13 +299,6 @@ position: relative;
 z-index: 1;
 }
 
-@media (max-width: 768px) {
-.story-section {
-background-attachment: scroll;
-padding: 4rem 1.5rem;
-}
-}
-
 .section-title {
 font-family: 'Cormorant Garamond', serif;
 font-size: 2.5rem;
@@ -173,58 +306,6 @@ color: #2d2d2d;
 text-align: center;
 margin-bottom: 0.5rem;
 font-weight: 400;
-}
-
-.timeline-section {
-background: #f9f9f9;
-}
-
-.timeline-date {
-font-family: 'Cormorant Garamond', serif;
-font-size: 2rem;
-color: #2d2d2d;
-text-align: center;
-margin-bottom: 2rem;
-font-weight: 500;
-}
-
-.timeline {
-max-width: 600px;
-margin: 0 auto;
-padding: 2rem;
-}
-
-.timeline-item {
-display: flex;
-justify-content: space-between;
-padding: 1rem 0;
-border-bottom: 1px solid #e0e0e0;
-font-family: 'Montserrat', sans-serif;
-font-size: 0.95rem;
-}
-
-.timeline-item:last-child {
-border-bottom: none;
-}
-
-.time {
-font-weight: 500;
-color: #2d2d2d;
-}
-
-.event {
-color: #666;
-text-align: right;
-}
-
-.venue-addresses {
-max-width: 700px;
-margin: 3rem auto 0;
-text-align: center;
-font-family: 'Montserrat', sans-serif;
-font-size: 0.9rem;
-line-height: 2;
-color: #666;
 }
 
 .intro-text {
@@ -237,168 +318,6 @@ max-width: 700px;
 margin: 0 auto 3rem;
 color: #666;
 font-weight: 300;
-}
-
-.dress-code {
-background: #fff;
-}
-
-.dress-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 4rem;
-margin: 3rem auto 0;
-max-width: 800px;
-}
-
-.dress-card {
-text-align: center;
-}
-
-.dress-icon {
-width: 60px;
-height: 60px;
-margin: 0 auto 1.5rem;
-opacity: 0.6;
-}
-
-.dress-card h3 {
-font-family: 'Cormorant Garamond', serif;
-color: #2d2d2d;
-margin-bottom: 1rem;
-font-size: 1.8rem;
-font-weight: 400;
-}
-
-.dress-card p {
-font-family: 'Montserrat', sans-serif;
-color: #666;
-line-height: 1.8;
-font-size: 0.95rem;
-}
-
-.dress-note {
-text-align: center;
-font-family: 'Montserrat', sans-serif;
-font-size: 0.9rem;
-color: #666;
-margin-top: 3rem;
-font-style: italic;
-}
-
-.rsvp-section {
-background: #f9f9f9;
-}
-
-.rsvp-form {
-max-width: 500px;
-margin: 0 auto;
-}
-
-.form-group {
-margin-bottom: 2rem;
-}
-
-label {
-display: block;
-margin-bottom: 0.8rem;
-color: #2d2d2d;
-font-family: 'Montserrat', sans-serif;
-font-size: 0.9rem;
-font-weight: 500;
-}
-
-input[type="text"] {
-width: 100%;
-padding: 0.8rem;
-border: 1px solid #ddd;
-border-radius: 3px;
-font-size: 0.95rem;
-font-family: 'Montserrat', sans-serif;
-}
-
-input[type="text"]:focus {
-outline: none;
-border-color: #999;
-}
-
-.radio-group {
-display: flex;
-flex-direction: column;
-gap: 0.8rem;
-}
-
-.radio-item {
-display: flex;
-align-items: center;
-gap: 0.8rem;
-}
-
-input[type="radio"] {
-width: 18px;
-height: 18px;
-cursor: pointer;
-}
-
-.radio-item label {
-margin: 0;
-font-weight: 400;
-cursor: pointer;
-}
-
-.checkbox-group {
-display: flex;
-flex-direction: column;
-gap: 0.8rem;
-}
-
-.checkbox-item {
-display: flex;
-align-items: center;
-gap: 0.8rem;
-}
-
-input[type="checkbox"] {
-width: 18px;
-height: 18px;
-cursor: pointer;
-}
-
-.checkbox-item label {
-margin: 0;
-font-weight: 400;
-cursor: pointer;
-}
-
-.contact-section {
-background: #fff;
-}
-
-.contact-info {
-text-align: center;
-max-width: 600px;
-margin: 0 auto;
-}
-
-.contact-info h3 {
-font-family: 'Cormorant Garamond', serif;
-color: #2d2d2d;
-margin-bottom: 1.5rem;
-font-size: 1.8rem;
-font-weight: 400;
-}
-
-.contact-info p {
-font-family: 'Montserrat', sans-serif;
-color: #666;
-line-height: 2;
-font-size: 0.95rem;
-}
-
-.phone {
-font-size: 1.1rem;
-color: #2d2d2d;
-margin: 1.5rem 0;
 }
 
 .footer {
@@ -421,37 +340,6 @@ font-family: 'Cormorant Garamond', serif;
 font-size: 1.5rem;
 color: #2d2d2d;
 font-weight: 400;
-}
-
-.bottom-decoration {
-width: 100%;
-padding: 20px 0;
-text-align: center;
-}
-
-.scroll-image {
-opacity: 0;
-transform: scale(0.8) translateY(30px);
-transition: all 0.8s ease;
-}
-
-.scroll-image.visible {
-opacity: 1;
-transform: scale(1) translateY(0);
-}
-
-.image-container {
-text-align: right;
-margin: 3rem 0;
-padding-right: 5%;
-}
-
-.image-container img {
-max-width: 400px;
-width: 80%;
-height: auto;
-border-radius: 15px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* Photo Ribbon Styles */
@@ -501,9 +389,9 @@ border: 8px solid #fff;
 box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 border-radius: 8px;
 display: block;
+background: linear-gradient(135deg, #d4c4b0 0%, #b8a88a 100%);
 }
 
-/* Individual photo tilts */
 .photo-item:nth-child(1) {
 transform: rotate(-3deg);
 }
@@ -524,7 +412,6 @@ transform: rotate(3deg);
 transform: rotate(-2deg);
 }
 
-/* Centered Circular Image */
 .circle-image-container {
 display: flex;
 justify-content: center;
@@ -541,6 +428,7 @@ object-fit: cover;
 border: 10px solid #fff;
 box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 transition: transform 0.3s ease;
+background: linear-gradient(135deg, #d4c4b0 0%, #b8a88a 100%);
 }
 
 .circle-image:hover {
@@ -548,9 +436,46 @@ transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
+.invitation-wrapper {
+margin: 1rem;
+padding: 2rem 1rem;
+}
+
+.event-title {
+font-size: 2.5rem;
+}
+
+.date-number {
+font-size: 3rem;
+}
+
+.date-number-container {
+gap: 1rem;
+}
+
+.line-short {
+width: 40px;
+}
+
+.photo-frame-container {
+flex-direction: column;
+align-items: center;
+}
+
+.photo-frame {
+width: 120px;
+height: 120px;
+margin-bottom: 2rem;
+}
+
+.date-content {
+padding-left: 0;
+}
+
 .hero {
 min-height: 100vh;
 padding: 1.5rem;
+background-attachment: scroll;
 }
 
 .names {
@@ -562,16 +487,8 @@ letter-spacing: 1px;
 font-size: 1.8rem;
 }
 
-.tagline {
-font-size: 0.9rem;
-}
-
 .invitation-title {
 font-size: 1.5rem;
-}
-
-#countdown {
-font-size: 1rem !important;
 }
 
 #countdown > div {
@@ -582,44 +499,12 @@ gap: 1rem !important;
 font-size: 1.8rem !important;
 }
 
-#countdown > div > div > div:last-child {
-font-size: 0.7rem !important;
-}
-
 .section {
 padding: 3rem 1.5rem;
 }
 
-.dress-grid {
-grid-template-columns: 1fr;
-gap: 2.5rem;
-}
-
-.timeline {
-padding: 1rem;
-}
-
-.timeline-date {
-font-size: 1.6rem;
-}
-
-.image-container {
-text-align: center;
-padding-right: 0;
-margin: 2rem 0;
-}
-
-.image-container img {
-width: 90%;
-max-width: 350px;
-}
-
 .intro-text {
 font-size: 0.95rem;
-}
-
-.venue-addresses {
-font-size: 0.85rem;
 }
 
 .photo-ribbon-container {
@@ -628,7 +513,6 @@ padding: 2rem 0;
 }
 
 .photo-ribbon {
-padding: 0;
 min-width: 100%;
 }
 
@@ -660,15 +544,20 @@ width: 180px;
 height: 180px;
 border: 8px solid #fff;
 }
+
+.story-section {
+background-attachment: scroll;
+padding: 4rem 1.5rem;
+}
 }
 </style>
 </head>
 <body>
+
 <script>
-// Countdown Timer - Run immediately
+// Countdown Timer
 (function() {
 function updateCountdown() {
-// Wedding date: April 15, 2026 at 11:30 PM
 const weddingDate = new Date(2026, 3, 15, 23, 30, 0);
 const now = new Date();
 const distance = weddingDate - now;
@@ -696,28 +585,7 @@ if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
 updateCountdown();
 setInterval(updateCountdown, 1000);
 })();
-
-// Scroll animation for images
-function checkScroll() {
-const images = document.querySelectorAll('.scroll-image');
-images.forEach(img => {
-const imageTop = img.getBoundingClientRect().top;
-const windowHeight = window.innerHeight;
-
-if (imageTop < windowHeight * 0.8) {
-img.classList.add('visible');
-}
-});
-}
-
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
 </script>
-<div class="top-decoration">
-<svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" fill="#d4c4b0"/>
-</svg>
-</div>
 
 <div class="hero">
 <div id="countdown" style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #666; margin: 2rem 0;">
@@ -762,29 +630,62 @@ What unfolded over time became a bond rooted in faith,<br> understanding, and co
 With thankful hearts,<br> we step forward into a life meant to be shared.    
 </p>
 
-<!-- NEW: 5-Photo Ribbon spanning full width end to end -->
 <div class="photo-ribbon-container">
 <div class="photo-ribbon">
 <div class="photo-item">
-<img src="photo1.png" alt="Roji & Linda Photo 1">
+<img src="data:image/svg+xml,%3Csvg width='400' height='280' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='280' fill='%23d4c4b0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='20'%3EPhoto 1%3C/text%3E%3C/svg%3E" alt="Roji & Linda Photo 1">
 </div>
 <div class="photo-item">
-<img src="photo2.png" alt="Roji & Linda Photo 2">
+<img src="data:image/svg+xml,%3Csvg width='400' height='280' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='280' fill='%23b8a88a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='20'%3EPhoto 2%3C/text%3E%3C/svg%3E" alt="Roji & Linda Photo 2">
 </div>
 <div class="photo-item">
-<img src="photo3.png" alt="Roji & Linda Photo 3">
+<img src="data:image/svg+xml,%3Csvg width='400' height='280' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='280' fill='%23c4b49a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='20'%3EPhoto 3%3C/text%3E%3C/svg%3E" alt="Roji & Linda Photo 3">
 </div>
 <div class="photo-item">
-<img src="photo4.png" alt="Roji & Linda Photo 4">
+<img src="data:image/svg+xml,%3Csvg width='400' height='280' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='280' fill='%23a89878'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='20'%3EPhoto 4%3C/text%3E%3C/svg%3E" alt="Roji & Linda Photo 4">
 </div>
 <div class="photo-item">
-<img src="photo5.png" alt="Roji & Linda Photo 5">
+<img src="data:image/svg+xml,%3Csvg width='400' height='280' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='280' fill='%23d0c0a8'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='20'%3EPhoto 5%3C/text%3E%3C/svg%3E" alt="Roji & Linda Photo 5">
 </div>
 </div>
 
-<!-- Centered Circular Image -->
 <div class="circle-image-container">
-<img src="circle-photo-2.png" alt="Roji & Linda" class="circle-image">
+<img src="data:image/svg+xml,%3Csvg width='250' height='250' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='125' cy='125' r='125' fill='%23b8a88a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='18'%3ECircle Photo%3C/text%3E%3C/svg%3E" alt="Roji & Linda" class="circle-image">
+</div>
+</div>
+</div>
+
+<!-- Engagement Section -->
+<div class="invitation-wrapper">
+<!-- Horizontal Divider -->
+<div class="horizontal-divider"></div>
+
+<!-- Event Section -->
+<div class="event-section">
+<h2 class="event-title">A promise at Sunset</h2>
+
+<!-- Photo and Date Side by Side -->
+<div class="photo-frame-container">
+<div class="photo-frame">
+<img src="data:image/svg+xml,%3Csvg width='140' height='140' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='140' height='140' fill='%23b8a88a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='14'%3EEngagement%3C/text%3E%3C/svg%3E" alt="Engagement Couple Illustration">
+</div>
+
+<div class="date-content">
+<div class="event-month">APRIL</div>
+<div class="date-number-container">
+<div class="side-lines-left">
+<div class="line-short"></div>
+<div class="day-label">THURSDAY</div>
+<div class="line-short"></div>
+</div>
+<div class="date-number">09</div>
+<div class="side-lines-right">
+<div class="line-short"></div>
+<div class="day-label">AT 5.30 PM</div>
+<div class="line-short"></div>
+</div>
+</div>
+<div class="date-year">2026</div>
 </div>
 </div>
 </div>
@@ -792,7 +693,7 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 <div class="section">
 <h2 class="section-title">Find Your Way To Us</h2>
 <div style="text-align: center; margin-top: 2rem;">
-<img src="venue.jpg" alt="St. Thomas Mar Thoma Syrian Church" style="max-width: 600px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+<img src="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='400' fill='%23d4c4b0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23fff' font-family='Arial' font-size='24'%3EVenue Image%3C/text%3E%3C/svg%3E" alt="St. Thomas Mar Thoma Syrian Church" style="max-width: 600px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
 <p style="font-family: 'Montserrat', sans-serif; color: #666; margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.8;">
 St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla
 </p>
@@ -802,12 +703,6 @@ St. Thomas Mar Thoma Syrian Church (SCS), Thiruvalla
 <div class="footer">
 <p class="footer-title">Hope to see you there</p>
 <p class="footer-names">Roji and Linda</p>
-</div>
-
-<div class="bottom-decoration">
-<svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" fill="#d4c4b0"/>
-</svg>
 </div>
 
 </body>
