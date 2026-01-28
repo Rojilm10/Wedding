@@ -94,32 +94,32 @@ margin-bottom: 0.5rem;
 }
 
 /* Photo Frame - Below the line, left-aligned */
-.photo-frame-container {
-width: 100%;
-overflow: hidden;
-padding: 4rem 0 2rem 0;
-margin: 3rem 0;
-background: transparent;
 
+z-index: 1;
+}
+
+.photo-frame-container {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+margin: 2rem 0;
 }
 
 .photo-frame {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-margin: 0;
-padding: 0;
+width: 140px;
+height: 140px;
+flex-shrink: 0;
+border: 3px solid #b8a88a;
+overflow: hidden;
+background: #fff;
+position: relative;
 }
 
 .photo-frame img {
-display: flex;
-justify-content: center;
-align-items: center;
 width: 100%;
-margin: 0;
-padding: 0;
-;
+height: 100%;
+object-fit: cover;
+
 }
 
 /* Date Info - Right side next to photo */
