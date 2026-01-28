@@ -28,36 +28,6 @@ padding: 3rem 2rem;
 position: relative;
 }
 
-/* Monogram Circle at Top */
-.monogram-circle {
-width: 120px;
-height: 120px;
-margin: 0 auto 2rem;
-border: 3px solid #b8a88a;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-background: rgba(255, 255, 255, 0.5);
-}
-
-.monogram-text {
-font-family: 'Great Vibes', cursive;
-font-size: 3rem;
-color: #7a9b76;
-}
-
-/* Top Leaf Decoration */
-.leaf-decoration-top {
-text-align: center;
-margin-bottom: 2rem;
-}
-
-.leaf-decoration-top svg {
-width: 80px;
-height: auto;
-}
-
 /* Horizontal Divider */
 .horizontal-divider {
 width: 100%;
@@ -93,7 +63,7 @@ text-align: center;
 margin-bottom: 0.5rem;
 }
 
-/* Photo Frame - Below the line, left-aligned */
+/* Photo Frame */
 .photo-frame-container {
 display: flex;
 align-items: flex-start;
@@ -117,7 +87,7 @@ height: 100%;
 object-fit: cover;
 }
 
-/* Date Info - Right side next to photo */
+/* Date Info */
 .date-content {
 flex: 1;
 display: flex;
@@ -125,13 +95,6 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 padding-left: 2rem;
-}
-
-.horizontal-line-separator {
-width: 60px;
-height: 1px;
-background: #b8a88a;
-margin-bottom: 0.8rem;
 }
 
 .date-number-container {
@@ -165,15 +128,6 @@ height: 1px;
 background: #b8a88a;
 }
 
-.date-day {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.85rem;
-color: #666;
-text-transform: uppercase;
-letter-spacing: 2px;
-margin-bottom: 1.5rem;
-}
-
 .date-number {
 font-size: 4.5rem;
 font-weight: 500;
@@ -182,27 +136,11 @@ line-height: 1;
 font-family: 'Montserrat', sans-serif;
 }
 
-.date-time {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.85rem;
-color: #666;
-margin-bottom: 0.5rem;
-}
-
 .date-year {
 font-family: 'Montserrat', sans-serif;
 font-size: 0.85rem;
 color: #999;
 margin-top: 0.5rem;
-}
-
-/* Venue */
-.venue-text {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.95rem;
-color: #666;
-text-align: center;
-margin-top: 2rem;
 }
 
 /* Story Section */
@@ -299,6 +237,34 @@ position: relative;
 z-index: 1;
 }
 
+.find-your-way-section {
+background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('./background3.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-blend-mode: lighten;
+padding: 4rem 2rem 6rem 2rem;
+margin: 0;
+max-width: 100%;
+position: relative;
+}
+
+.find-your-way-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(250, 248, 245, 0.5);
+z-index: 0;
+}
+
+.find-your-way-section > * {
+position: relative;
+z-index: 1;
+}
+
 .section-title {
 font-family: 'Cormorant Garamond', serif;
 font-size: 2.5rem;
@@ -325,14 +291,6 @@ background: #fff;
 text-align: center;
 padding: 4rem 2rem;
 border-top: 1px solid #f0f0f0;
-}
-
-.footer-title {
-font-family: 'Cormorant Garamond', serif;
-font-size: 2rem;
-color: #2d2d2d;
-margin-bottom: 1.5rem;
-font-weight: 400;
 }
 
 .footer-names {
@@ -547,6 +505,11 @@ border: 8px solid #fff;
 background-attachment: scroll;
 padding: 4rem 1.5rem 6rem 1.5rem;
 }
+
+.find-your-way-section {
+background-attachment: scroll;
+padding: 4rem 1.5rem;
+}
 }
 </style>
 </head>
@@ -655,21 +618,15 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 
 <!-- Engagement Section -->
 <div class="invitation-wrapper">
-<!-- Horizontal Divider -->
 <div class="horizontal-divider"></div>
-
-<!-- Event Section -->
 <div class="event-section">
 <h2 class="event-title">A Promise At Sunset</h2>
-
-<!-- Photo and Date Side by Side -->
 <div class="photo-frame-container">
 <div class="photo-frame">
 <img src="engagement.png" alt="Engagement Couple Illustration">
 </div>
-
 <div class="date-content">
-<div class="event-month">April</div>
+<div class="event-month">APRIL</div>
 <div class="date-number-container">
 <div class="side-lines-left">
 <div class="line-short"></div>
@@ -691,19 +648,13 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 
 <!-- Wedding Section -->
 <div class="invitation-wrapper">
-<!-- Horizontal Divider -->
 <div class="horizontal-divider"></div>
-
-<!-- Event Section -->
 <div class="event-section">
 <h2 class="event-title">The Forever Chapter</h2>
-
-<!-- Photo and Date Side by Side -->
 <div class="photo-frame-container">
 <div class="photo-frame">
 <img src="wedding.png" alt="Wedding Couple Illustration">
 </div>
-
 <div class="date-content">
 <div class="event-month">APRIL</div>
 <div class="date-number-container">
@@ -727,19 +678,13 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 
 <!-- Reception Section -->
 <div class="invitation-wrapper">
-<!-- Horizontal Divider -->
 <div class="horizontal-divider"></div>
-
-<!-- Event Section -->
 <div class="event-section">
 <h2 class="event-title">Grains of Love</h2>
-
-<!-- Photo and Date Side by Side -->
 <div class="photo-frame-container">
 <div class="photo-frame">
 <img src="reception.png" alt="Reception Couple Illustration">
 </div>
-
 <div class="date-content">
 <div class="event-month">APRIL</div>
 <div class="date-number-container">
@@ -782,7 +727,8 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 </div>
 </div>
 
-<div class="section">
+<!-- Find Your Way To Us Section with Background -->
+<div class="section find-your-way-section">
 <h2 class="section-title">Find Your Way To Us</h2>
 
 <!-- QR Code Section -->
@@ -807,8 +753,6 @@ If you have any questions, feel free to contact us at
 <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; color: #666; line-height: 2; max-width: 700px; margin: 0 auto 2rem;">
 We look forward to celebrating these moments of joy with you, as we begin our life together with faith, love and gratitude.
 </p>
-</div>
-</div>
 </div>
 </div>
 
