@@ -6,536 +6,105 @@
 <title>Roji & Linda - Wedding Invitation</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: 'Montserrat', sans-serif;
-color: #2d2d2d;
-background: #f8f6f3;
-overflow-x: hidden;
-}
-
-/* Main Container */
-.invitation-wrapper {
-max-width: 600px;
-margin: 2rem auto;
-background: #f8f6f3;
-padding: 3rem 2rem;
-position: relative;
-}
-
-/* Horizontal Divider */
-.horizontal-divider {
-width: 100%;
-height: 1px;
-background: linear-gradient(to right, transparent 10%, #b8a88a 50%, transparent 90%);
-margin: 2rem 0;
-position: relative;
-}
-
-/* Event Section */
-.event-section {
-position: relative;
-padding: 2rem 0;
-}
-
-/* Event Title */
-.event-title {
-font-family: 'Great Vibes', cursive;
-font-size: 3.5rem;
-color: #5a5a5a;
-text-align: center;
-margin-bottom: 1rem;
-line-height: 1;
-}
-
-.event-month {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.75rem;
-color: #999;
-text-transform: uppercase;
-letter-spacing: 4px;
-text-align: center;
-margin-bottom: 0.5rem;
-}
-
-/* Photo Frame */
-.photo-frame-container {
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
-margin: 2rem 0;
-}
-
-.photo-frame {
-width: 140px;
-height: 140px;
-flex-shrink: 0;
-border: 3px solid #b8a88a;
-overflow: hidden;
-background: #fff;
-position: relative;
-}
-
-.photo-frame img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-/* Date Info */
-.date-content {
-flex: 1;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding-left: 2rem;
-}
-
-.date-number-container {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 1.5rem;
-margin: 1.5rem 0;
-}
-
-.side-lines-left,
-.side-lines-right {
-display: flex;
-flex-direction: column;
-gap: 25px;
-align-items: center;
-}
-
-.day-label {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.65rem;
-color: #666;
-text-transform: uppercase;
-letter-spacing: 1.5px;
-text-align: center;
-}
-
-.line-short {
-width: 70px;
-height: 1px;
-background: #b8a88a;
-}
-
-.date-number {
-font-size: 4.5rem;
-font-weight: 500;
-color: #2d2d2d;
-line-height: 1;
-font-family: 'Montserrat', sans-serif;
-}
-
-.date-year {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.85rem;
-color: #999;
-margin-top: 0.5rem;
-}
-
-/* Story Section */
-.hero {
-min-height: 90vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 2rem;
-background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('./background.jpg');
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-position: relative;
-}
-
-.hero::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(250, 248, 245, 0.7);
-z-index: 0;
-}
-
-.hero > * {
-position: relative;
-z-index: 1;
-}
-
-.names {
-font-family: 'Cormorant Garamond', serif;
-font-size: 5rem;
-font-weight: 300;
-color: #2d2d2d;
-margin: 1rem 0;
-letter-spacing: 2px;
-}
-
-.ampersand {
-font-style: italic;
-font-weight: 300;
-}
-
-.invitation-title {
-font-family: 'Cormorant Garamond', serif;
-font-size: 2rem;
-color: #2d2d2d;
-margin-top: 2rem;
-font-weight: 400;
-}
-
-.flower-divider {
-width: 80px;
-margin: 3rem auto;
-opacity: 0.4;
-}
-
-.section {
-padding: 4rem 2rem;
-max-width: 1000px;
-margin: 0 auto;
-}
-
-.story-section {
-background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('./background2.png');
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-background-blend-mode: lighten;
-padding: 4rem 2rem 10rem 2rem;
-margin: 0 0 -2rem 0;
-max-width: 100%;
-position: relative;
-}
-
-.story-section::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(250, 248, 245, 0.5);
-z-index: 0;
-}
-
-.story-section > * {
-position: relative;
-z-index: 1;
-}
-
-.find-your-way-section {
-background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('./background3.png');
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-background-blend-mode: lighten;
-padding: 4rem 2rem 6rem 2rem;
-margin: 0;
-max-width: 100%;
-position: relative;
-}
-
-.find-your-way-section::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(250, 248, 245, 0.5);
-z-index: 0;
-}
-
-.find-your-way-section > * {
-position: relative;
-z-index: 1;
-}
-
-.section-title {
-font-family: 'Cormorant Garamond', serif;
-font-size: 2.5rem;
-color: #2d2d2d;
-text-align: center;
-margin-bottom: 0.5rem;
-font-weight: 400;
-}
-
-.intro-text {
-text-align: center;
-font-family: 'Montserrat', sans-serif;
-font-size: 1.05rem;
-line-height: 2;
-margin-top: 0;
-max-width: 700px;
-margin: 0 auto 3rem;
-color: #666;
-font-weight: 300;
-}
-
-.footer {
-background: #fff;
-text-align: center;
-padding: 4rem 2rem;
-border-top: 1px solid #f0f0f0;
-}
-
-.footer-names {
-font-family: 'Cormorant Garamond', serif;
-font-size: 1.5rem;
-color: #2d2d2d;
-font-weight: 400;
-}
-
-/* Photo Ribbon Styles */
-.photo-ribbon-container {
-width: 100%;
-overflow: hidden;
-padding: 4rem 0 2rem 0;
-margin: 3rem 0;
-background: transparent;
-}
-
-.photo-ribbon {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-margin: 0;
-padding: 0;
-}
-
-.photo-item {
-flex: 1;
-margin: 0 -15px;
-position: relative;
-transition: transform 0.3s ease;
-z-index: 1;
-}
-
-.photo-item:first-child {
-margin-left: 0;
-}
-
-.photo-item:last-child {
-margin-right: 0;
-}
-
-.photo-item:hover {
-transform: scale(1.05) !important;
-z-index: 10;
-}
-
-.photo-item img {
-width: 100%;
-height: 280px;
-object-fit: cover;
-border: 8px solid #fff;
-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-border-radius: 8px;
-display: block;
-}
-
-.photo-item:nth-child(1) {
-transform: rotate(-3deg);
-}
-
-.photo-item:nth-child(2) {
-transform: rotate(2deg);
-}
-
-.photo-item:nth-child(3) {
-transform: rotate(-1deg);
-}
-
-.photo-item:nth-child(4) {
-transform: rotate(3deg);
-}
-
-.photo-item:nth-child(5) {
-transform: rotate(-2deg);
-}
-
-.circle-image-container {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 3rem;
-padding: 0 2rem;
-}
-
-.circle-image {
-width: 250px;
-height: 250px;
-border-radius: 50%;
-object-fit: cover;
-border: 10px solid #fff;
-box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-transition: transform 0.3s ease;
-}
-
-.circle-image:hover {
-transform: scale(1.05);
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; color: #2d2d2d; background: #f8f6f3; overflow-x: hidden; }
+.invitation-wrapper { max-width: 600px; margin: 2rem auto; background: #f8f6f3; padding: 3rem 2rem; position: relative; }
+.horizontal-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent 10%, #b8a88a 50%, transparent 90%); margin: 2rem 0; position: relative; }
+.event-section { position: relative; padding: 2rem 0; }
+.event-title { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: #5a5a5a; text-align: center; margin-bottom: 1rem; line-height: 1; }
+.event-month { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #999; text-transform: uppercase; letter-spacing: 4px; text-align: center; margin-bottom: 0.5rem; }
+.photo-frame-container { display: flex; align-items: flex-start; justify-content: space-between; margin: 2rem 0; }
+.photo-frame { width: 140px; height: 140px; flex-shrink: 0; border: 3px solid #b8a88a; overflow: hidden; background: #fff; position: relative; }
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.date-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-left: 2rem; }
+.date-number-container { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; }
+.side-lines-left, .side-lines-right { display: flex; flex-direction: column; gap: 25px; align-items: center; }
+.day-label { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; color: #666; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; }
+.line-short { width: 70px; height: 1px; background: #b8a88a; }
+.date-number { font-size: 4.5rem; font-weight: 500; color: #2d2d2d; line-height: 1; font-family: 'Montserrat', sans-serif; }
+.date-year { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #999; margin-top: 0.5rem; }
+.hero { min-height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), url('./background.jpg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(250,248,245,0.7); z-index: 0; }
+.hero > * { position: relative; z-index: 1; }
+.names { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: #2d2d2d; margin: 1rem 0; letter-spacing: 2px; }
+.ampersand { font-style: italic; font-weight: 300; }
+.invitation-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #2d2d2d; margin-top: 2rem; font-weight: 400; }
+.flower-divider { width: 80px; margin: 3rem auto; opacity: 0.4; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.story-section { background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url('./background2.png'); background-size: cover; background-position: center; background-attachment: fixed; background-blend-mode: lighten; padding: 4rem 2rem 10rem 2rem; margin: 0 0 -2rem 0; max-width: 100%; position: relative; }
+.story-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(250,248,245,0.5); z-index: 0; }
+.story-section > * { position: relative; z-index: 1; }
+.find-your-way-section { background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url('./background3.png'); background-size: cover; background-position: center; background-attachment: fixed; background-blend-mode: lighten; padding: 4rem 2rem 6rem 2rem; margin: 0; max-width: 100%; position: relative; }
+.find-your-way-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(250,248,245,0.5); z-index: 0; }
+.find-your-way-section > * { position: relative; z-index: 1; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #2d2d2d; text-align: center; margin-bottom: 0.5rem; font-weight: 400; }
+.intro-text { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 1.05rem; line-height: 2; margin-top: 0; max-width: 700px; margin: 0 auto 3rem; color: #666; font-weight: 300; }
+.footer { background: #fff; text-align: center; padding: 4rem 2rem; border-top: 1px solid #f0f0f0; }
+.footer-names { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #2d2d2d; font-weight: 400; }
+.photo-ribbon-container { width: 100%; overflow: hidden; padding: 4rem 0 2rem 0; margin: 3rem 0; background: transparent; }
+.photo-ribbon { display: flex; justify-content: center; align-items: center; width: 100%; margin: 0; padding: 0; }
+.photo-item { flex: 1; margin: 0 -15px; position: relative; transition: transform 0.3s ease; z-index: 1; }
+.photo-item:first-child { margin-left: 0; }
+.photo-item:last-child { margin-right: 0; }
+.photo-item:hover { transform: scale(1.05) !important; z-index: 10; }
+.photo-item img { width: 100%; height: 280px; object-fit: cover; border: 8px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border-radius: 8px; display: block; }
+.photo-item:nth-child(1) { transform: rotate(-3deg); }
+.photo-item:nth-child(2) { transform: rotate(2deg); }
+.photo-item:nth-child(3) { transform: rotate(-1deg); }
+.photo-item:nth-child(4) { transform: rotate(3deg); }
+.photo-item:nth-child(5) { transform: rotate(-2deg); }
+.circle-image-container { display: flex; justify-content: center; align-items: center; margin-top: 3rem; padding: 0 2rem; }
+.circle-image { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 10px solid #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.25); transition: transform 0.3s ease; }
+.circle-image:hover { transform: scale(1.05); }
 
 @media (max-width: 768px) {
-.invitation-wrapper {
-margin: 1rem;
-padding: 2rem 1rem;
-}
-
-.event-title {
-font-size: 2.5rem;
-}
-
-.date-number {
-font-size: 3rem;
-}
-
-.date-number-container {
-gap: 1rem;
-}
-
-.line-short {
-width: 40px;
-}
-
-.photo-frame-container {
-flex-direction: column;
-align-items: center;
-}
-
-.photo-frame {
-width: 120px;
-height: 120px;
-margin-bottom: 2rem;
-}
-
-.date-content {
-padding-left: 0;
-}
-
-.hero {
-min-height: 100vh;
-padding: 1.5rem;
-background-attachment: scroll;
-}
-
-.names {
-font-size: 2.5rem;
-letter-spacing: 1px;
-}
-
-.section-title {
-font-size: 1.8rem;
-}
-
-.invitation-title {
-font-size: 1.5rem;
-}
-
-#countdown > div {
-gap: 1rem !important;
-}
-
-#countdown > div > div > div:first-child {
-font-size: 1.8rem !important;
-}
-
-.section {
-padding: 3rem 1.5rem;
-}
-
-.intro-text {
-font-size: 0.95rem;
-}
-
-.photo-ribbon-container {
-overflow-x: auto;
-padding: 2rem 0;
-}
-
-.photo-ribbon {
-min-width: 100%;
-}
-
-.photo-item {
-flex: 1;
-min-width: 120px;
-margin: 0 -10px;
-}
-
-.photo-item:first-child {
-margin-left: 0;
-}
-
-.photo-item:last-child {
-margin-right: 0;
-}
-
-.photo-item img {
-height: 200px;
-}
-
-.circle-image-container {
-margin-top: 2rem;
-padding: 0 1rem;
-}
-
-.circle-image {
-width: 180px;
-height: 180px;
-border: 8px solid #fff;
-}
-
-.story-section {
-background-attachment: scroll;
-padding: 4rem 1.5rem 6rem 1.5rem;
-}
-
-.find-your-way-section {
-background-attachment: scroll;
-padding: 4rem 1.5rem;
-}
+.invitation-wrapper { margin: 1rem; padding: 2rem 1rem; }
+.event-title { font-size: 2.5rem; }
+.date-number { font-size: 3rem; }
+.date-number-container { gap: 1rem; }
+.line-short { width: 40px; }
+.photo-frame-container { flex-direction: column; align-items: center; }
+.photo-frame { width: 120px; height: 120px; margin-bottom: 2rem; }
+.date-content { padding-left: 0; }
+.hero { min-height: 100vh; padding: 1.5rem; background-attachment: scroll; }
+.names { font-size: 2.5rem; letter-spacing: 1px; }
+.section-title { font-size: 1.8rem; }
+.invitation-title { font-size: 1.5rem; }
+#countdown > div { gap: 1rem !important; }
+#countdown > div > div > div:first-child { font-size: 1.8rem !important; }
+.section { padding: 3rem 1.5rem; }
+.intro-text { font-size: 0.95rem; }
+.photo-ribbon-container { overflow-x: auto; padding: 2rem 0; }
+.photo-ribbon { min-width: 100%; }
+.photo-item { flex: 1; min-width: 120px; margin: 0 -10px; }
+.photo-item:first-child { margin-left: 0; }
+.photo-item:last-child { margin-right: 0; }
+.photo-item img { height: 200px; }
+.circle-image-container { margin-top: 2rem; padding: 0 1rem; }
+.circle-image { width: 180px; height: 180px; border: 8px solid #fff; }
+.story-section { background-attachment: scroll; padding: 4rem 1.5rem 6rem 1.5rem; }
+.find-your-way-section { background-attachment: scroll; padding: 4rem 1.5rem; }
 }
 </style>
 </head>
 <body>
 
 <script>
-// Countdown Timer
 (function() {
 function updateCountdown() {
-//const weddingDate = new Date(2026, 3, 15, 23, 30, 0);
 const weddingDate = new Date(2026, 5, 15, 23, 30, 0);
 const now = new Date();
 const distance = weddingDate - now;
-
 if (distance > 0) {
 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
 setTimeout(function() {
-const daysEl = document.getElementById('days');
-const hoursEl = document.getElementById('hours');
-const minutesEl = document.getElementById('minutes');
-const secondsEl = document.getElementById('seconds');
-
+var daysEl = document.getElementById('days');
+var hoursEl = document.getElementById('hours');
+var minutesEl = document.getElementById('minutes');
+var secondsEl = document.getElementById('seconds');
 if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
 if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
 if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
@@ -543,38 +112,23 @@ if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
 }, 100);
 }
 }
-
 updateCountdown();
 setInterval(updateCountdown, 1000);
 })();
 </script>
 
 <div class="hero">
-<div id="countdown" style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #666; margin: 2rem 0;">
-<div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-<div style="text-align: center;">
-<div id="days" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
-<div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Days</div>
-</div>
-<div style="text-align: center;">
-<div id="hours" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
-<div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Hours</div>
-</div>
-<div style="text-align: center;">
-<div id="minutes" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
-<div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Minutes</div>
-</div>
-<div style="text-align: center;">
-<div id="seconds" style="font-size: 2.5rem; font-weight: 500; color: #2d2d2d;">--</div>
-<div style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Seconds</div>
+<div id="countdown" style="font-family:'Montserrat',sans-serif;font-size:1.2rem;color:#666;margin:2rem 0;">
+<div style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+<div style="text-align:center;"><div id="days" style="font-size:2.5rem;font-weight:500;color:#2d2d2d;">--</div><div style="font-size:0.8rem;color:#999;text-transform:uppercase;letter-spacing:1px;">Days</div></div>
+<div style="text-align:center;"><div id="hours" style="font-size:2.5rem;font-weight:500;color:#2d2d2d;">--</div><div style="font-size:0.8rem;color:#999;text-transform:uppercase;letter-spacing:1px;">Hours</div></div>
+<div style="text-align:center;"><div id="minutes" style="font-size:2.5rem;font-weight:500;color:#2d2d2d;">--</div><div style="font-size:0.8rem;color:#999;text-transform:uppercase;letter-spacing:1px;">Minutes</div></div>
+<div style="text-align:center;"><div id="seconds" style="font-size:2.5rem;font-weight:500;color:#2d2d2d;">--</div><div style="font-size:0.8rem;color:#999;text-transform:uppercase;letter-spacing:1px;">Seconds</div></div>
 </div>
 </div>
-</div>
-
 <h1 class="names">Roji <span class="ampersand">&</span> Linda</h1>
-
 <h2 class="invitation-title">With God's grace and our families' blessings,<br>we invite you to celebrate our wedding.</h2>
-<h2 class="invitation-title">15 June 2026 • Thiruvalla</h2>
+<h2 class="invitation-title">15 June 2026 &bull; Thiruvalla</h2>
 <svg class="flower-divider" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M30 20 Q40 10 50 20 Q60 10 70 20" stroke="#d4c4b0" stroke-width="1" fill="none"/>
 <circle cx="30" cy="20" r="3" fill="#d4c4b0"/>
@@ -584,35 +138,22 @@ setInterval(updateCountdown, 1000);
 </div>
 
 <div class="section story-section">
-<h2 class="section-title" style="margin-bottom: 1rem;">In the Quiet of Time</h2>
-
+<h2 class="section-title" style="margin-bottom:1rem;">In the Quiet of Time</h2>
 <p class="intro-text">
 Some journeys begin softly, shaped by grace,<br> patience, and trust.
 What unfolded over time became a bond rooted in faith,<br> understanding, and companionship.<br>
-With thankful hearts,<br> we step forward into a life meant to be shared.    
+With thankful hearts,<br> we step forward into a life meant to be shared.
 </p>
-
 <div class="photo-ribbon-container">
 <div class="photo-ribbon">
-<div class="photo-item">
-<img src="photo1.png" alt="Roji & Linda Photo 1">
+<div class="photo-item"><img src="photo1.png" alt="Roji &amp; Linda Photo 1"></div>
+<div class="photo-item"><img src="photo2.png" alt="Roji &amp; Linda Photo 2"></div>
+<div class="photo-item"><img src="photo3.png" alt="Roji &amp; Linda Photo 3"></div>
+<div class="photo-item"><img src="photo4.png" alt="Roji &amp; Linda Photo 4"></div>
+<div class="photo-item"><img src="photo5.png" alt="Roji &amp; Linda Photo 5"></div>
 </div>
-<div class="photo-item">
-<img src="photo2.png" alt="Roji & Linda Photo 2">
-</div>
-<div class="photo-item">
-<img src="photo3.png" alt="Roji & Linda Photo 3">
-</div>
-<div class="photo-item">
-<img src="photo4.png" alt="Roji & Linda Photo 4">
-</div>
-<div class="photo-item">
-<img src="photo5.png" alt="Roji & Linda Photo 5">
-</div>
-</div>
-
 <div class="circle-image-container">
-<img src="circle-photo-2.png" alt="Roji & Linda" class="circle-image">
+<img src="circle-photo-2.png" alt="Roji &amp; Linda" class="circle-image">
 </div>
 </div>
 </div>
@@ -623,23 +164,13 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 <div class="event-section">
 <h2 class="event-title">A Promise At Sunset</h2>
 <div class="photo-frame-container">
-<div class="photo-frame">
-<img src="engagement.png" alt="Engagement Couple Illustration">
-</div>
+<div class="photo-frame"><img src="engagement.png" alt="Engagement Couple Illustration"></div>
 <div class="date-content">
 <div class="event-month">JUNE</div>
 <div class="date-number-container">
-<div class="side-lines-left">
-<div class="line-short"></div>
-<div class="day-label">TUESDAY</div>
-<div class="line-short"></div>
-</div>
+<div class="side-lines-left"><div class="line-short"></div><div class="day-label">TUESDAY</div><div class="line-short"></div></div>
 <div class="date-number">09</div>
-<div class="side-lines-right">
-<div class="line-short"></div>
-<div class="day-label">AT 5:30 PM</div>
-<div class="line-short"></div>
-</div>
+<div class="side-lines-right"><div class="line-short"></div><div class="day-label">AT 5:30 PM</div><div class="line-short"></div></div>
 </div>
 <div class="date-year">2026</div>
 </div>
@@ -653,23 +184,13 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 <div class="event-section">
 <h2 class="event-title">The Forever Chapter</h2>
 <div class="photo-frame-container">
-<div class="photo-frame">
-<img src="wedding.png" alt="Wedding Couple Illustration">
-</div>
+<div class="photo-frame"><img src="wedding.png" alt="Wedding Couple Illustration"></div>
 <div class="date-content">
 <div class="event-month">JUNE</div>
 <div class="date-number-container">
-<div class="side-lines-left">
-<div class="line-short"></div>
-<div class="day-label">MONDAY</div>
-<div class="line-short"></div>
-</div>
+<div class="side-lines-left"><div class="line-short"></div><div class="day-label">MONDAY</div><div class="line-short"></div></div>
 <div class="date-number">15</div>
-<div class="side-lines-right">
-<div class="line-short"></div>
-<div class="day-label">AT 11:30 AM</div>
-<div class="line-short"></div>
-</div>
+<div class="side-lines-right"><div class="line-short"></div><div class="day-label">AT 11:30 AM</div><div class="line-short"></div></div>
 </div>
 <div class="date-year">2026</div>
 </div>
@@ -683,23 +204,13 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 <div class="event-section">
 <h2 class="event-title">Grains of Love</h2>
 <div class="photo-frame-container">
-<div class="photo-frame">
-<img src="reception.png" alt="Reception Couple Illustration">
-</div>
+<div class="photo-frame"><img src="reception.png" alt="Reception Couple Illustration"></div>
 <div class="date-content">
 <div class="event-month">JUNE</div>
 <div class="date-number-container">
-<div class="side-lines-left">
-<div class="line-short"></div>
-<div class="day-label">MONDAY</div>
-<div class="line-short"></div>
-</div>
+<div class="side-lines-left"><div class="line-short"></div><div class="day-label">MONDAY</div><div class="line-short"></div></div>
 <div class="date-number">15</div>
-<div class="side-lines-right">
-<div class="line-short"></div>
-<div class="day-label">AT 12:30 PM</div>
-<div class="line-short"></div>
-</div>
+<div class="side-lines-right"><div class="line-short"></div><div class="day-label">AT 12:30 PM</div><div class="line-short"></div></div>
 </div>
 <div class="date-year">2026</div>
 </div>
@@ -710,50 +221,126 @@ With thankful hearts,<br> we step forward into a life meant to be shared.
 <!-- Photo Ribbon Section Below Grains of Love -->
 <div class="photo-ribbon-container">
 <div class="photo-ribbon">
-<div class="photo-item">
-<img src="photo6.png" alt="Roji & Linda Photo 6">
-</div>
-<div class="photo-item">
-<img src="photo7.png" alt="Roji & Linda Photo 7">
-</div>
-<div class="photo-item">
-<img src="photo8.png" alt="Roji & Linda Photo 8">
-</div>
-<div class="photo-item">
-<img src="photo9.png" alt="Roji & Linda Photo 9">
-</div>
-<div class="photo-item">
-<img src="photo10.png" alt="Roji & Linda Photo 10">
-</div>
+<div class="photo-item"><img src="photo6.png" alt="Roji &amp; Linda Photo 6"></div>
+<div class="photo-item"><img src="photo7.png" alt="Roji &amp; Linda Photo 7"></div>
+<div class="photo-item"><img src="photo8.png" alt="Roji &amp; Linda Photo 8"></div>
+<div class="photo-item"><img src="photo9.png" alt="Roji &amp; Linda Photo 9"></div>
+<div class="photo-item"><img src="photo10.png" alt="Roji &amp; Linda Photo 10"></div>
 </div>
 </div>
 
-<!-- Find Your Way To Us Section with Background -->
+<!-- Find Your Way To Us Section -->
 <div class="section find-your-way-section">
 <h2 class="section-title">Find Your Way To Us</h2>
-
-<!-- QR Code Section -->
-<div style="margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">
-<div style="background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); display: inline-block;">
-<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1rem;">Scan to Get Directions</h3>
-<p style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Scan this QR code with your phone to open Google Maps</p>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://share.google/E38cyGxiRlFyIRftt" alt="QR Code for Church Location" style="width: 300px; height: 300px; border: 3px solid #b8a88a; border-radius: 10px; padding: 10px; background: white;">
-<p style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #999; margin-top: 1rem;">Or <a href="https://share.google/E38cyGxiRlFyIRftt" target="_blank" style="color: #7a9b76; text-decoration: none; font-weight: 500;">click here</a> to open directly</p>
+<div style="margin-top:3rem;max-width:600px;margin-left:auto;margin-right:auto;text-align:center;">
+<div style="background:#fff;padding:2rem;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1);display:inline-block;">
+<h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#2d2d2d;margin-bottom:1rem;">Scan to Get Directions</h3>
+<p style="font-family:'Montserrat',sans-serif;font-size:0.85rem;color:#666;margin-bottom:1.5rem;">Scan this QR code with your phone to open Google Maps</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://share.google/E38cyGxiRlFyIRftt" alt="QR Code for Church Location" style="width:300px;height:300px;border:3px solid #b8a88a;border-radius:10px;padding:10px;background:white;">
+<p style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:#999;margin-top:1rem;">Or <a href="https://share.google/E38cyGxiRlFyIRftt" target="_blank" style="color:#7a9b76;text-decoration:none;font-weight:500;">click here</a> to open directly</p>
 </div>
 </div>
-
-<!-- Contact Information Section -->
-
-
-<p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; color: #666; line-height: 2; max-width: 700px; margin: 0 auto 2rem;text-align: center;">
+<p style="font-family:'Montserrat',sans-serif;font-size:1.05rem;color:#666;line-height:2;max-width:700px;margin:2rem auto;text-align:center;">
 We look forward to celebrating these moments of joy with you,<br> as we begin our life together with faith, love and gratitude.
 </p>
 </div>
+
+<!-- ═══════════════════════════════ -->
+<!--        RSVP SECTION            -->
+<!-- ═══════════════════════════════ -->
+<div style="background:#f8f6f3;padding:4rem 2rem;display:flex;justify-content:center;">
+  <div style="background:#fff;border:1px solid #e0d8ce;border-radius:16px;padding:3rem 2.5rem;max-width:480px;width:100%;position:relative;box-shadow:0 4px 30px rgba(0,0,0,0.06);">
+
+    <!-- Top decoration -->
+    <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;">
+      <div style="width:40px;height:1px;background:#c8b8a0;"></div>
+      <div style="width:6px;height:6px;border-radius:50%;background:#c8b8a0;"></div>
+      <div style="width:40px;height:1px;background:#c8b8a0;"></div>
+    </div>
+
+    <h2 style="font-family:'Great Vibes',cursive;font-size:2.8rem;color:#4a4a4a;text-align:center;margin-bottom:0.5rem;line-height:1.2;">Please confirm your attendance</h2>
+
+    <p style="font-family:'Montserrat',sans-serif;font-size:0.8rem;color:#888;text-align:center;margin-bottom:2rem;letter-spacing:0.5px;">*no later than 01.06.2026</p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-size:0.85rem;color:#666;margin-bottom:0.5rem;letter-spacing:0.5px;">Your name</p>
+
+    <input type="text" id="rsvp-name" placeholder="" style="width:100%;border:none;border-bottom:1px solid #2d2d2d;background:transparent;padding:0.5rem 0;font-family:'Montserrat',sans-serif;font-size:1rem;color:#2d2d2d;outline:none;margin-bottom:2rem;">
+
+    <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;">
+      <label style="display:flex;align-items:center;gap:1rem;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.95rem;color:#2d2d2d;">
+        <div id="box-attend" onclick="selectRSVP('attend')" style="width:22px;height:22px;border:1.5px solid #888;border-radius:3px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;"></div>
+        I will attend
+      </label>
+      <label style="display:flex;align-items:center;gap:1rem;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.95rem;color:#2d2d2d;">
+        <div id="box-decline" onclick="selectRSVP('decline')" style="width:22px;height:22px;border:1.5px solid #888;border-radius:3px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;"></div>
+        No, unfortunately I can't attend &#128577;
+      </label>
+    </div>
+
+    <div style="text-align:center;">
+      <button onclick="submitRSVP()" onmouseover="this.style.background='#8a7a6a'" onmouseout="this.style.background='#a09080'" style="background:#a09080;color:#fff;border:none;border-radius:10px;padding:1rem 3.5rem;font-family:'Montserrat',sans-serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;width:80%;">SUBMIT</button>
+    </div>
+
+    <div id="rsvp-message" style="display:none;margin-top:1.5rem;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;"></div>
+
+    <!-- Bottom decoration -->
+    <div style="position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;">
+      <div style="width:40px;height:1px;background:#c8b8a0;"></div>
+      <div style="width:6px;height:6px;border-radius:50%;background:#c8b8a0;"></div>
+      <div style="width:40px;height:1px;background:#c8b8a0;"></div>
+    </div>
+
+  </div>
 </div>
+<!-- ═══════════════════════════════ -->
+<!--      END RSVP SECTION          -->
+<!-- ═══════════════════════════════ -->
 
 <div class="footer">
 <p class="footer-names">Roji and Linda</p>
 </div>
+
+<script>
+var rsvpSelection = null;
+
+function selectRSVP(choice) {
+  rsvpSelection = choice;
+  var boxAttend = document.getElementById('box-attend');
+  var boxDecline = document.getElementById('box-decline');
+  boxAttend.innerHTML = '';
+  boxDecline.innerHTML = '';
+  boxAttend.style.borderColor = '#888';
+  boxDecline.style.borderColor = '#888';
+  var target = choice === 'attend' ? boxAttend : boxDecline;
+  target.style.borderColor = '#a09080';
+  target.innerHTML = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5,10 11,3" stroke="#a09080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+}
+
+function submitRSVP() {
+  var name = document.getElementById('rsvp-name').value.trim();
+  var msg = document.getElementById('rsvp-message');
+  if (!name) {
+    msg.style.display = 'block';
+    msg.style.color = '#c0796a';
+    msg.textContent = 'Please enter your name.';
+    return;
+  }
+  if (!rsvpSelection) {
+    msg.style.display = 'block';
+    msg.style.color = '#c0796a';
+    msg.textContent = 'Please select your attendance.';
+    return;
+  }
+  msg.style.display = 'block';
+  if (rsvpSelection === 'attend') {
+    msg.style.color = '#7a9b76';
+    msg.textContent = 'Thank you, ' + name + '! We look forward to celebrating with you. \uD83C\uDF89';
+  } else {
+    msg.style.color = '#a09080';
+    msg.textContent = 'Thank you, ' + name + '. You will be missed! \uD83D\uDC9B';
+  }
+}
+</script>
 
 </body>
 </html>
